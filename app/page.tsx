@@ -132,7 +132,7 @@ export default function Home() {
               
               <div className="p-6 border border-white/5 bg-white/5 rounded-3xl">
                 <h3 className="text-lg font-bold mb-2">Quick Support</h3>
-                <p className="text-[#a9b3bf] text-xs leading-relaxed">Skip the wait—message us directly on WhatsApp for instant booking updates any time.</p>
+                <p className="text-[#a9b3bf] text-xs leading-relaxed">Skip the wait,Message us directly on WhatsApp for instant booking updates any time.</p>
               </div>
             </div>
         </section>
