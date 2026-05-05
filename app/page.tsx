@@ -85,7 +85,7 @@ export default function Home() {
           <div className="order-2 md:order-1">
             <span className="inline-block px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[#a9b3bf] font-bold text-[11px] uppercase tracking-wider">Apartment • Dehiwala</span>
             <h1 className="text-4xl md:text-6xl font-black mt-4 mb-4 leading-tight">Comfortable stay at <span className="text-[#22c55e]">Rian Rest</span></h1>
-            <p className="text-[#a9b3bf] leading-relaxed text-base md:text-lg max-w-md">A clean, cozy apartment for couples, families, and solo travelers. Check availability and rates instantly via WhatsApp.</p>
+            <p className="text-[#a9b3bf] leading-relaxed text-base md:text-lg max-w-md">A clean, cozy apartment for families, and solo travelers. Check availability and rates instantly via WhatsApp.</p>
             
             <div className="flex gap-3 mt-8">
               <a href="#photos" className="bg-white/5 border border-white/10 px-6 py-3 rounded-full font-bold text-sm hover:bg-white/10 transition">Photos</a>
