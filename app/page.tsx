@@ -202,7 +202,7 @@ export default function Home() {
       </main>
 
       <footer className="py-10 border-t border-black/10 text-center text-[#4a5568] text-xs font-bold">
-        <p>© {new Date().getFullYear()} Rian Rest. Built by TNikil.</p>
+        <p>© {new Date().getFullYear()} Rian Rest. </p>
       </footer>
 
       {/* Lightbox */}
