@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  /* This sets the color for Light Mode */
-  --background: #b1ccd6;
+  /* This changes the main background */
+  --background: #b1ccd6; 
   --foreground: #171717;
 }
 
@@ -13,9 +13,9 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* We update this section so it doesn't turn black on dark-mode devices */
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Update this to #b1ccd6 so it stays blue even if the user's phone is on Dark Mode */
     --background: #b1ccd6; 
     --foreground: #171717;
   }
@@ -24,5 +24,6 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* The layout uses Geist fonts, so we link them here */
+  font-family: var(--font-geist-sans), Arial, sans-serif;
 }
