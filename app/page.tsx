@@ -38,7 +38,6 @@ export default function Home() {
       {/* Header */}
       <header className="sticky top-0 z-[60] backdrop-blur-md bg-[#b1ccd6]/80 border-b border-black/10">
         <div className="max-w-[1100px] mx-auto px-5 py-4 flex items-center justify-between">
-          {/* FANCY LOGO (Using Playfair Display) */}
           <a 
             href="#top" 
             className="text-3xl font-bold tracking-tight text-black italic"
@@ -55,16 +54,18 @@ export default function Home() {
             items-center justify-center md:justify-start
             gap-8 md:gap-6 
             p-12 md:p-0 
-            bg-[#b1ccd6] md:bg-transparent 
+            /* Fixed: Blur and color only on mobile */
+            bg-[#b1ccd6]/95 backdrop-blur-xl md:bg-transparent md:backdrop-blur-0
             border-b md:border-none border-black/10
             transition-all duration-300 ease-in-out z-[50]
+            min-h-[60vh] md:min-h-0
           `}>
             {['About', 'Photos', 'Amenities', 'Location', 'Contact'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`} 
                 onClick={() => setIsMenuOpen(false)} 
-                className="text-[#4a5568] font-bold text-xl md:text-sm hover:text-black transition-colors text-center"
+                className="text-[#2d3748] font-black text-2xl md:text-sm hover:text-black transition-colors text-center"
               >
                 {item}
               </a>
@@ -93,12 +94,13 @@ export default function Home() {
           <div className="order-2 md:order-1">
             <span className="inline-block px-3 py-1 rounded-full border border-black/10 bg-black/5 text-[#4a5568] font-bold text-[11px] uppercase tracking-wider">Apartment • Dehiwala</span>
             
-            {/* Standard Clean Font for Hero */}
             <h1 className="text-4xl md:text-6xl font-black mt-4 mb-4 leading-tight text-black">
               Comfortable stay at <span className="text-[#15803d]">Rian Rest</span>
             </h1>
             
-            <p className="text-[#4a5568] leading-relaxed text-base md:text-lg max-w-md font-medium">A clean, cozy apartment for families, and solo travelers. Check availability and rates instantly via WhatsApp.</p>
+            <p className="text-[#2d3748] leading-relaxed text-base md:text-xl max-w-md font-bold">
+              A clean, cozy apartment for families, and solo travelers. Check availability and rates instantly via WhatsApp.
+            </p>
             
             <div className="flex gap-3 mt-8">
               <a href="#photos" className="bg-black/5 border border-black/10 px-6 py-3 rounded-full font-bold text-sm hover:bg-black/10 transition text-black">Photos</a>
@@ -127,7 +129,7 @@ export default function Home() {
         {/* About Section */}
         <section id="about" className="py-12 border-t border-black/10">
             <h2 className="text-3xl font-black mb-6 text-black">About Rian Rest</h2>
-            <p className="text-[#4a5568] font-medium leading-relaxed mb-8 text-lg">
+            <p className="text-[#2d3748] font-bold leading-relaxed mb-8 text-lg md:text-xl">
               Rian Rest is a private apartment stay designed for comfort and convenience. 
               Close to key locations, ideal for relaxing after travel or work. (SLTDA Approved)
             </p>
