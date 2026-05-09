@@ -10,7 +10,7 @@ export default function Home() {
   
   const amenities = [
     "Wi-Fi", "Hot water", "Kitchen", 
-    "Air conditioning", "TV", "Clean bedding", "Family friendly"
+    "Air conditioning", "TV", "Clean bedding", "Family friendly" , "Rooftop access"
   ];
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
