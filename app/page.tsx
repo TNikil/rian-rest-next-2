@@ -38,15 +38,23 @@ export default function Home() {
       {/* Header */}
       <header className="sticky top-0 z-[60] backdrop-blur-md bg-[#b1ccd6]/80 border-b border-black/10">
         <div className="max-w-[1100px] mx-auto px-5 py-4 flex items-center justify-between">
-          <a href="#top" className="font-extrabold tracking-tight text-lg text-black">Rian Rest</a>
+          {/* FANCY LOGO (Using Playfair Display) */}
+          <a 
+            href="#top" 
+            className="text-3xl font-bold tracking-tight text-black italic"
+            style={{ fontFamily: 'var(--font-playfair), serif' }}
+          >
+            Rian Rest
+          </a>
           
           <nav className={`
             ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'} 
             md:translate-y-0 md:opacity-100 md:pointer-events-auto
             fixed md:relative top-[72px] md:top-0 left-0 right-0 
             flex flex-col md:flex-row 
-            gap-6 md:gap-6 
-            p-8 md:p-0 
+            items-center justify-center md:justify-start
+            gap-8 md:gap-6 
+            p-12 md:p-0 
             bg-[#b1ccd6] md:bg-transparent 
             border-b md:border-none border-black/10
             transition-all duration-300 ease-in-out z-[50]
@@ -56,7 +64,7 @@ export default function Home() {
                 key={item} 
                 href={`#${item.toLowerCase()}`} 
                 onClick={() => setIsMenuOpen(false)} 
-                className="text-[#4a5568] font-bold text-sm hover:text-black transition-colors"
+                className="text-[#4a5568] font-bold text-xl md:text-sm hover:text-black transition-colors text-center"
               >
                 {item}
               </a>
@@ -84,7 +92,12 @@ export default function Home() {
         <section className="pt-10 pb-10 grid md:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           <div className="order-2 md:order-1">
             <span className="inline-block px-3 py-1 rounded-full border border-black/10 bg-black/5 text-[#4a5568] font-bold text-[11px] uppercase tracking-wider">Apartment • Dehiwala</span>
-            <h1 className="text-4xl md:text-6xl font-black mt-4 mb-4 leading-tight text-black">Comfortable stay at <span className="text-[#15803d]">Rian Rest</span></h1>
+            
+            {/* Standard Clean Font for Hero */}
+            <h1 className="text-4xl md:text-6xl font-black mt-4 mb-4 leading-tight text-black">
+              Comfortable stay at <span className="text-[#15803d]">Rian Rest</span>
+            </h1>
+            
             <p className="text-[#4a5568] leading-relaxed text-base md:text-lg max-w-md font-medium">A clean, cozy apartment for families, and solo travelers. Check availability and rates instantly via WhatsApp.</p>
             
             <div className="flex gap-3 mt-8">
