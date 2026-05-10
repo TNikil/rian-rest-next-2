@@ -4,7 +4,10 @@ import { useState, useEffect } from 'react';
 
 export default function Home() {
   const WHATSAPP_NUMBER = "+94764779861";
-  const LOCATION_TEXT = "69A B547, Dehiwala-Mount Lavinia";
+  
+  // Updated specific address text
+  const LOCATION_TEXT = "68/D/1/1, Kawdana Road, Dehiwala, Sri Lanka";
+  
   const DIRECTIONS_LINK = "https://www.google.com/maps/place/69A+B547,+Dehiwala-Mount+Lavinia/@6.8472947,79.8700813,19z";
   const WA_MESSAGE = "Hi! I would like to book Rian Rest. Please send availability, prices, and details. Thank you!";
   
@@ -41,7 +44,6 @@ export default function Home() {
       <header className="sticky top-0 z-[60] backdrop-blur-md bg-[#AFDDE5]/80 border-b border-[#003135]/10">
         <div className="max-w-[1100px] mx-auto px-5 py-4 flex items-center justify-between">
           
-          {/* Top-Left Logo Implementation */}
           <a href="#top" className="transition-transform hover:scale-105 active:scale-95">
             <img 
               src="/logo.png" 
@@ -281,7 +283,7 @@ export default function Home() {
         <p>© {new Date().getFullYear()} Rian Rest. Built by TNikil.</p>
       </footer>
 
-      {/* Lightbox for Gallery */}
+      {/* Lightbox */}
       {selectedImage && (
         <div className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-5" onClick={() => setSelectedImage(null)}>
           <img src={selectedImage} className="max-w-full max-h-[80vh] rounded-2xl border-4 border-white/10" alt="Preview" />
