@@ -27,20 +27,20 @@ export default function Home() {
 
   return (
     <div
-      className="min-h-screen text-[#1a1a1a] selection:bg-[#22c55e]/30 font-sans"
+      className="min-h-screen text-[#003135] selection:bg-white/30 font-sans"
       style={{
-        backgroundColor: '#b1ccd6',
+        backgroundColor: '#AFDDE5',
         backgroundImage: `
           radial-gradient(1200px 600px at 20% -10%, rgba(255,255,255,0.4), transparent 60%),
-          radial-gradient(1000px 500px at 90% 0%, rgba(34,197,94,0.1), transparent 55%)
+          radial-gradient(1000px 500px at 90% 0%, rgba(0,49,53,0.1), transparent 55%)
         `
       }}
     >
       
       {/* Header */}
-      <header className="sticky top-0 z-[60] backdrop-blur-md bg-[#b1ccd6]/80 border-b border-black/10">
+      <header className="sticky top-0 z-[60] backdrop-blur-md bg-[#AFDDE5]/80 border-b border-[#003135]/10">
         <div className="max-w-[1100px] mx-auto px-5 py-4 flex items-center justify-between">
-          <a href="#top" className="text-3xl font-bold tracking-tight text-black italic">
+          <a href="#top" className="text-3xl font-bold tracking-tight text-white italic drop-shadow-sm">
             Rian Rest
           </a>
 
@@ -50,8 +50,8 @@ export default function Home() {
               md:translate-y-0 md:opacity-100 md:pointer-events-auto
               fixed md:relative top-[72px] md:top-0 left-0 right-0 
               flex flex-col md:flex-row items-center justify-center md:justify-start
-              gap-8 md:gap-6 p-12 md:p-0 bg-[#b1ccd6]/95 backdrop-blur-xl md:bg-transparent md:backdrop-blur-0
-              border-b md:border-none border-black/10 transition-all duration-300 ease-in-out z-[50] min-h-[60vh] md:min-h-0
+              gap-8 md:gap-6 p-12 md:p-0 bg-[#AFDDE5]/95 backdrop-blur-xl md:bg-transparent md:backdrop-blur-0
+              border-b md:border-none border-[#003135]/10 transition-all duration-300 ease-in-out z-[50] min-h-[60vh] md:min-h-0
             `}
           >
             {['About', 'Photos', 'Amenities', 'Location', 'Contact'].map((item) => (
@@ -59,7 +59,7 @@ export default function Home() {
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-[#2d3748] font-black text-2xl md:text-sm hover:text-black transition-colors text-center"
+                className="text-[#003135] font-black text-2xl md:text-sm hover:text-white transition-colors text-center"
               >
                 {item}
               </a>
@@ -70,18 +70,18 @@ export default function Home() {
             <a
               href={waLink}
               target="_blank"
-              className="bg-[#22c55e] text-white px-4 py-2 rounded-full text-xs font-black hover:scale-105 transition shadow-md"
+              className="bg-white text-[#003135] px-4 py-2 rounded-full text-xs font-black hover:scale-105 hover:bg-[#22c55e] hover:text-white transition shadow-md"
             >
               BOOK NOW
             </a>
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden w-10 h-10 rounded-xl border border-black/10 bg-black/5 flex flex-col items-center justify-center gap-1.5"
+              className="md:hidden w-10 h-10 rounded-xl border border-[#003135]/10 bg-[#003135]/5 flex flex-col items-center justify-center gap-1.5"
             >
-              <span className={`w-5 h-0.5 bg-black transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-              <span className={`w-5 h-0.5 bg-black transition-opacity ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`w-5 h-0.5 bg-black transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+              <span className={`w-5 h-0.5 bg-[#003135] transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`w-5 h-0.5 bg-[#003135] transition-opacity ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`w-5 h-0.5 bg-[#003135] transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
             </button>
           </div>
         </div>
@@ -92,23 +92,22 @@ export default function Home() {
         {/* Hero Section */}
         <section className="pt-10 pb-10 grid md:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           <div className="order-2 md:order-1">
-            <span className="inline-block px-3 py-1 rounded-full border border-black/10 bg-black/5 text-[#4a5568] font-bold text-[11px] uppercase tracking-wider">
+            <span className="inline-block px-3 py-1 rounded-full border border-[#003135]/10 bg-white/20 text-[#003135] font-bold text-[11px] uppercase tracking-wider">
               Apartment • Dehiwala
             </span>
 
-            <h1 className="text-4xl md:text-6xl font-black mt-4 mb-4 leading-tight text-black">
-              Comfortable stay at <span className="text-[#15803d]">Rian Rest</span>
+            <h1 className="text-4xl md:text-6xl font-black mt-4 mb-4 leading-tight text-[#003135]">
+              Comfortable stay at <span className="text-white drop-shadow-sm">Rian Rest</span>
             </h1>
 
-            {/* MODIFIED: Removed 'italic' class from the paragraph below */}
-            <p className="text-[#2d3748] leading-relaxed text-base md:text-xl max-w-md font-bold">
+            <p className="text-[#003135]/80 leading-relaxed text-base md:text-xl max-w-md font-bold">
               A clean, cozy apartment for families and solo travelers. SLTDA Approved sanctuary.
             </p>
 
             <div className="flex gap-3 mt-8">
               <a
                 href="#photos"
-                className="bg-black/5 border border-black/10 px-6 py-3 rounded-full font-bold text-sm hover:bg-black/10 transition text-black"
+                className="bg-white px-6 py-3 rounded-full font-bold text-sm text-[#003135] hover:bg-[#22c55e] hover:text-white transition shadow-lg"
               >
                 Photos
               </a>
@@ -116,7 +115,7 @@ export default function Home() {
               <a
                 href={waLink}
                 target="_blank"
-                className="bg-[#22c55e] px-6 py-3 rounded-full font-bold text-sm text-white hover:bg-[#16a34a] transition shadow-lg"
+                className="bg-white px-6 py-3 rounded-full font-bold text-sm text-[#003135] hover:bg-[#22c55e] hover:text-white transition shadow-lg"
               >
                 WhatsApp
               </a>
@@ -126,99 +125,85 @@ export default function Home() {
               {[{ t: 'Check-in', v: 'Flexible' }, { t: 'Stay', v: 'Daily' }, { t: 'For', v: 'Families' }].map((s) => (
                 <div
                   key={s.t}
-                  className="p-4 rounded-2xl border border-black/5 bg-white/30 backdrop-blur-sm text-center"
+                  className="p-4 rounded-2xl border border-[#003135]/5 bg-white/30 backdrop-blur-sm text-center"
                 >
-                  <p className="text-[#4a5568] text-[10px] font-black uppercase tracking-tighter mb-1">
+                  <p className="text-[#003135]/60 text-[10px] font-black uppercase tracking-tighter mb-1">
                     {s.t}
                   </p>
-                  <p className="text-xs md:text-sm font-bold text-black">{s.v}</p>
+                  <p className="text-xs md:text-sm font-bold text-[#003135]">{s.v}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="order-1 md:order-2 relative rounded-[32px] border border-black/10 overflow-hidden shadow-2xl h-[300px] md:h-[500px]">
+          <div className="order-1 md:order-2 relative rounded-[32px] border border-[#003135]/10 overflow-hidden shadow-2xl h-[300px] md:h-[500px]">
             <img src="/images/hero.jpg" alt="Hero" className="w-full h-full object-cover" />
           </div>
         </section>
 
-        {/* About */}
-        <section id="about" className="py-12 border-t border-black/10">
-          <h2 className="text-3xl font-black mb-6 text-black">About Rian Rest</h2>
-
-          <p className="text-[#2d3748] font-bold leading-relaxed mb-8 text-lg md:text-xl">
+        {/* About Section stays same... */}
+        <section id="about" className="py-12 border-t border-[#003135]/10">
+          <h2 className="text-3xl font-black mb-6 text-[#003135]">About Rian Rest</h2>
+          <p className="text-[#003135] font-bold leading-relaxed mb-8 text-lg md:text-xl">
             Rian Rest is a private apartment stay designed for comfort and convenience.
             Close to key locations, ideal for relaxing after travel or work. (SLTDA Approved)
           </p>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-6 border border-black/5 bg-white/30 rounded-3xl">
-              <h3 className="text-lg font-bold mb-2 text-black">Clean & Cozy</h3>
-              <p className="text-[#4a5568] text-xs leading-relaxed font-semibold">
+            <div className="p-6 border border-[#003135]/5 bg-white/30 rounded-3xl">
+              <h3 className="text-lg font-bold mb-2 text-[#003135]">Clean & Cozy</h3>
+              <p className="text-[#003135]/70 text-xs leading-relaxed font-semibold">
                 A well-maintained, private space designed for your comfort and relaxation.
               </p>
             </div>
-
-            <div className="p-6 border border-black/5 bg-white/30 rounded-3xl">
-              <h3 className="text-lg font-bold mb-2 text-black">Great Location</h3>
-              <p className="text-[#4a5568] text-xs leading-relaxed font-semibold">
+            <div className="p-6 border border-[#003135]/5 bg-white/30 rounded-3xl">
+              <h3 className="text-lg font-bold mb-2 text-[#003135]">Great Location</h3>
+              <p className="text-[#003135]/70 text-xs leading-relaxed font-semibold">
                 Located in Dehiwala, just minutes away from KFC, Burger King, and Pizza Hut for easy dining.
               </p>
             </div>
-
-            <div className="p-6 border border-black/5 bg-white/30 rounded-3xl">
-              <h3 className="text-lg font-bold mb-2 text-black">Quick Support</h3>
-              <p className="text-[#4a5568] text-xs leading-relaxed font-semibold">
+            <div className="p-6 border border-[#003135]/5 bg-white/30 rounded-3xl">
+              <h3 className="text-lg font-bold mb-2 text-[#003135]">Quick Support</h3>
+              <p className="text-[#003135]/70 text-xs leading-relaxed font-semibold">
                 Message us directly on WhatsApp for instant booking updates any time.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Photos */}
-        <section id="photos" className="py-12 border-t border-black/10">
-          <h2 className="text-3xl font-black mb-6 text-black">Photo Gallery</h2>
-
+        {/* Photo Gallery Section stays same... */}
+        <section id="photos" className="py-12 border-t border-[#003135]/10">
+          <h2 className="text-3xl font-black mb-6 text-[#003135]">Photo Gallery</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {galleryImages.map((num) => (
               <div
                 key={num}
                 onClick={() => setSelectedImage(`/images/${num}.jpg`)}
-                className="aspect-square border border-black/5 bg-white/20 rounded-2xl overflow-hidden cursor-pointer active:scale-95 transition-transform shadow-sm hover:shadow-md"
+                className="aspect-square border border-[#003135]/5 bg-white/20 rounded-2xl overflow-hidden cursor-pointer active:scale-95 transition-transform shadow-sm hover:shadow-md"
               >
-                <img
-                  src={`/images/${num}.jpg`}
-                  className="h-full w-full object-cover"
-                  alt={`Gallery ${num}`}
-                />
+                <img src={`/images/${num}.jpg`} className="h-full w-full object-cover" alt={`Gallery ${num}`} />
               </div>
             ))}
           </div>
         </section>
 
-        {/* Amenities */}
-        <section id="amenities" className="py-12 border-t border-black/10">
-          <h2 className="text-3xl font-black mb-6 text-black">Amenities</h2>
-
+        {/* Amenities Section stays same... */}
+        <section id="amenities" className="py-12 border-t border-[#003135]/10">
+          <h2 className="text-3xl font-black mb-6 text-[#003135]">Amenities</h2>
           <div className="flex flex-wrap gap-2">
             {amenities.map((item) => (
-              <div
-                key={item}
-                className="px-5 py-3 rounded-2xl border border-black/5 bg-white/30 font-bold text-xs text-[#4a5568]"
-              >
+              <div key={item} className="px-5 py-3 rounded-2xl border border-[#003135]/5 bg-white/30 font-bold text-xs text-[#003135]/70">
                 {item}
               </div>
             ))}
           </div>
         </section>
 
-        {/* Location */}
-        <section id="location" className="py-12 border-t border-black/10">
-          <h2 className="text-3xl font-black mb-6 text-black">Location & Travel</h2>
-
+        {/* Location Section stays same... */}
+        <section id="location" className="py-12 border-t border-[#003135]/10">
+          <h2 className="text-3xl font-black mb-6 text-[#003135]">Location & Travel</h2>
           <div className="grid lg:grid-cols-[1fr_380px] gap-8 items-start">
             <div className="space-y-4">
-              <div className="rounded-[32px] border border-black/10 overflow-hidden h-[450px] bg-white/20 shadow-inner">
+              <div className="rounded-[32px] border border-[#003135]/10 overflow-hidden h-[450px] bg-white/20 shadow-inner">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d350.138124557147!2d79.87008130274859!3d6.847294720581908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b0314c24b27%3A0x786a6ca9c51d4b1d!2s69a%20B547%2C%20Dehiwala-Mount%20Lavinia!5e0!3m2!1sen!2slk!4v1778395923563!5m2!1sen!2slk"
                   width="100%"
@@ -229,21 +214,14 @@ export default function Home() {
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
-
-              <a
-                href={DIRECTIONS_LINK}
-                target="_blank"
-                className="block text-center w-full bg-white/40 border border-black/10 py-4 rounded-2xl font-bold text-sm text-black hover:bg-white/60 transition"
-              >
+              <a href={DIRECTIONS_LINK} target="_blank" className="block text-center w-full bg-white/40 border border-[#003135]/10 py-4 rounded-2xl font-bold text-sm text-[#003135] hover:bg-white/60 transition">
                 Open in Google Maps
               </a>
             </div>
-
-            <div className="p-8 border border-black/10 bg-white/30 backdrop-blur-md rounded-[32px] shadow-lg">
-              <h3 className="text-xl font-black mb-6 text-black flex items-center gap-2">
+            <div className="p-8 border border-[#003135]/10 bg-white/30 backdrop-blur-md rounded-[32px] shadow-lg">
+              <h3 className="text-xl font-black mb-6 text-[#003135] flex items-center gap-2">
                 <span className="text-2xl">📍</span> Proximity Guide
               </h3>
-
               <div className="space-y-6">
                 {[
                   { name: "Cargills Food City", dist: "500 m", time: "2 min", icon: "🛒" },
@@ -256,19 +234,13 @@ export default function Home() {
                 ].map((place, i) => (
                   <div key={i} className="flex items-center justify-between group">
                     <div className="flex items-center gap-3">
-                      <span className="text-xl group-hover:scale-125 transition-transform">
-                        {place.icon}
-                      </span>
+                      <span className="text-xl group-hover:scale-125 transition-transform">{place.icon}</span>
                       <div>
-                        <p className="font-bold text-sm text-black">{place.name}</p>
-                        <p className="text-[10px] font-black text-[#4a5568] uppercase tracking-tighter">
-                          {place.dist}
-                        </p>
+                        <p className="font-bold text-sm text-[#003135]">{place.name}</p>
+                        <p className="text-[10px] font-black text-[#003135]/60 uppercase tracking-tighter">{place.dist}</p>
                       </div>
                     </div>
-                    <span className="bg-black/5 border border-black/5 px-3 py-1 rounded-full text-[10px] font-black text-[#15803d]">
-                      {place.time}
-                    </span>
+                    <span className="bg-[#003135]/5 border border-[#003135]/5 px-3 py-1 rounded-full text-[10px] font-black text-[#003135]">{place.time}</span>
                   </div>
                 ))}
               </div>
@@ -278,58 +250,41 @@ export default function Home() {
 
         {/* Contact */}
         <section id="contact" className="py-12 mb-20">
-          <div className="max-w-xl mx-auto p-10 border border-black/5 bg-white/40 backdrop-blur-md rounded-[48px] text-center shadow-xl">
-            <h2 className="text-3xl font-black mb-4 text-black">
-              Ready to visit?
-            </h2>
-            <p className="text-[#4a5568] mb-8 font-semibold">
+          <div className="max-w-xl mx-auto p-10 border border-[#003135]/5 bg-white/40 backdrop-blur-md rounded-[48px] text-center shadow-xl">
+            <h2 className="text-3xl font-black mb-4 text-[#003135]">Ready to visit?</h2>
+            <p className="text-[#003135]/70 mb-8 font-semibold">
               Message us on WhatsApp and we’ll reply with availability and rates.
             </p>
             <a
               href={waLink}
               target="_blank"
-              className="inline-block bg-[#22c55e] text-white px-12 py-5 rounded-full font-black text-lg hover:scale-105 transition shadow-xl"
+              className="inline-block bg-[#22c55e] text-white px-12 py-5 rounded-full font-black text-lg hover:scale-105 hover:bg-white hover:text-[#22c55e] transition shadow-xl"
             >
               CHAT ON WHATSAPP
             </a>
-            <div className="mt-8 pt-8 border-t border-black/10">
-              <p className="font-bold text-black italic">Rian Rest Apartment</p>
-              <p className="font-medium text-sm text-[#4a5568]">
-                {LOCATION_TEXT}
-              </p>
+            <div className="mt-8 pt-8 border-t border-[#003135]/10">
+              <p className="font-bold text-[#003135] italic">Rian Rest Apartment</p>
+              <p className="font-medium text-sm text-[#003135]/70">{LOCATION_TEXT}</p>
             </div>
           </div>
         </section>
 
       </main>
 
-      <footer className="py-10 border-t border-black/10 text-center text-[#4a5568] text-xs font-bold">
+      <footer className="py-10 border-t border-[#003135]/10 text-center text-[#003135]/40 text-xs font-bold">
         <p>© {new Date().getFullYear()} Rian Rest. Built by TNikil.</p>
       </footer>
 
-      {/* Lightbox */}
+      {/* Lightbox stays same... */}
       {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-5"
-          onClick={() => setSelectedImage(null)}
-        >
-          <img
-            src={selectedImage}
-            className="max-w-full max-h-[80vh] rounded-2xl border-4 border-white/10"
-            alt="Preview"
-          />
-          <p className="fixed bottom-10 text-white font-bold uppercase tracking-widest text-xs">
-            Tap anywhere to close
-          </p>
+        <div className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-5" onClick={() => setSelectedImage(null)}>
+          <img src={selectedImage} className="max-w-full max-h-[80vh] rounded-2xl border-4 border-white/10" alt="Preview" />
+          <p className="fixed bottom-10 text-white font-bold uppercase tracking-widest text-xs">Tap anywhere to close</p>
         </div>
       )}
 
-      {/* Floating WhatsApp */}
-      <a
-        href={waLink}
-        target="_blank"
-        className="md:hidden fixed right-6 bottom-6 w-14 h-14 bg-[#22c55e] rounded-full flex items-center justify-center shadow-2xl z-[50] border-2 border-white/20"
-      >
+      {/* Floating WhatsApp stays same... */}
+      <a href={waLink} target="_blank" className="md:hidden fixed right-6 bottom-6 w-14 h-14 bg-[#22c55e] rounded-full flex items-center justify-center shadow-2xl z-[50] border-2 border-white/20">
         <svg viewBox="0 0 24 24" className="w-7 h-7 fill-white">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.893 9.885z"/>
         </svg>
