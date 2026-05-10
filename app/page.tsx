@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 export default function Home() {
   const WHATSAPP_NUMBER = "+94764779861";
   const LOCATION_TEXT = "69A B547, Dehiwala-Mount Lavinia";
-  const DIRECTIONS_LINK = "https://maps.app.goo.gl/ChIJJXT6UABb4joRj71S3WQEKYI";
+  const DIRECTIONS_LINK = "https://www.google.com/maps/place/69A+B547,+Dehiwala-Mount+Lavinia/@6.8472947,79.8700813,19z";
   const WA_MESSAGE = "Hi! I would like to book Rian Rest. Please send availability, prices, and details. Thank you!";
   
   const amenities = [
@@ -100,6 +100,7 @@ export default function Home() {
               Comfortable stay at <span className="text-[#15803d]">Rian Rest</span>
             </h1>
 
+            {/* MODIFIED: Removed 'italic' class from the paragraph below */}
             <p className="text-[#2d3748] leading-relaxed text-base md:text-xl max-w-md font-bold">
               A clean, cozy apartment for families and solo travelers. SLTDA Approved sanctuary.
             </p>
@@ -219,7 +220,7 @@ export default function Home() {
             <div className="space-y-4">
               <div className="rounded-[32px] border border-black/10 overflow-hidden h-[450px] bg-white/20 shadow-inner">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.353386629916!2d79.866034!3d6.848135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bad761c7647%3A0xb35a06019a184e1b!2sRian%20Rest%20Apartment!5e0!3m2!1sen!2slk!4v1715332000000!5m2!1sen!2slk"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d350.138124557147!2d79.87008130274859!3d6.847294720581908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b0314c24b27%3A0x786a6ca9c51d4b1d!2s69a%20B547%2C%20Dehiwala-Mount%20Lavinia!5e0!3m2!1sen!2slk!4v1778395923563!5m2!1sen!2slk"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
