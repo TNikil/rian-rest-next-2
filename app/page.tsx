@@ -272,7 +272,7 @@ export default function Home() {
       </main>
 
       <footer className="py-10 border-t border-[#003135]/10 text-center text-[#003135]/40 text-xs font-bold">
-        <p>© {new Date().getFullYear()} Rian Rest. Built by TNikil.</p>
+        <p>© {new Date().getFullYear()} Rian Rest. Built By Creovx.</p>
       </footer>
 
       {/* Lightbox stays same... */}
