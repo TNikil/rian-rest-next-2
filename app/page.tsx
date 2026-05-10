@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 export default function Home() {
   const WHATSAPP_NUMBER = "+94764779861";
   const LOCATION_TEXT = "69A B547, Dehiwala-Mount Lavinia";
-  const DIRECTIONS_LINK = "https://www.google.com/maps/place/69A+B547,+Dehiwala-Mount+Lavinia/@6.8472947,79.8700813,19z";
+  const DIRECTIONS_LINK = "https://maps.app.goo.gl/ChIJJXT6UABb4joRj71S3WQEKYI";
   const WA_MESSAGE = "Hi! I would like to book Rian Rest. Please send availability, prices, and details. Thank you!";
   
   const amenities = [
@@ -100,7 +100,7 @@ export default function Home() {
               Comfortable stay at <span className="text-[#15803d]">Rian Rest</span>
             </h1>
 
-            <p className="text-[#2d3748] leading-relaxed text-base md:text-xl max-w-md font-bold italic">
+            <p className="text-[#2d3748] leading-relaxed text-base md:text-xl max-w-md font-bold">
               A clean, cozy apartment for families and solo travelers. SLTDA Approved sanctuary.
             </p>
 
@@ -151,7 +151,6 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-
             <div className="p-6 border border-black/5 bg-white/30 rounded-3xl">
               <h3 className="text-lg font-bold mb-2 text-black">Clean & Cozy</h3>
               <p className="text-[#4a5568] text-xs leading-relaxed font-semibold">
@@ -172,7 +171,6 @@ export default function Home() {
                 Message us directly on WhatsApp for instant booking updates any time.
               </p>
             </div>
-
           </div>
         </section>
 
@@ -218,12 +216,10 @@ export default function Home() {
           <h2 className="text-3xl font-black mb-6 text-black">Location & Travel</h2>
 
           <div className="grid lg:grid-cols-[1fr_380px] gap-8 items-start">
-
             <div className="space-y-4">
-
               <div className="rounded-[32px] border border-black/10 overflow-hidden h-[450px] bg-white/20 shadow-inner">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d350.138124557147!2d79.87008130274859!3d6.847294720581908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b0314c24b27%3A0x786a6ca9c51d4b1d!2s69a%20B547%2C%20Dehiwala-Mount%20Lavinia!5e0!3m2!1sen!2slk!4v1778395923563!5m2!1sen!2slk"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.353386629916!2d79.866034!3d6.848135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bad761c7647%3A0xb35a06019a184e1b!2sRian%20Rest%20Apartment!5e0!3m2!1sen!2slk!4v1715332000000!5m2!1sen!2slk"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -240,17 +236,14 @@ export default function Home() {
               >
                 Open in Google Maps
               </a>
-
             </div>
 
             <div className="p-8 border border-black/10 bg-white/30 backdrop-blur-md rounded-[32px] shadow-lg">
-
               <h3 className="text-xl font-black mb-6 text-black flex items-center gap-2">
                 <span className="text-2xl">📍</span> Proximity Guide
               </h3>
 
               <div className="space-y-6">
-
                 {[
                   { name: "Cargills Food City", dist: "500 m", time: "2 min", icon: "🛒" },
                   { name: "Food Hub (KFC/BK)", dist: "1.1 km", time: "5 min", icon: "🍔" },
@@ -261,12 +254,10 @@ export default function Home() {
                   { name: "Marine Drive", dist: "14 km", time: "25 min", icon: "🛣️" },
                 ].map((place, i) => (
                   <div key={i} className="flex items-center justify-between group">
-
                     <div className="flex items-center gap-3">
                       <span className="text-xl group-hover:scale-125 transition-transform">
                         {place.icon}
                       </span>
-
                       <div>
                         <p className="font-bold text-sm text-black">{place.name}</p>
                         <p className="text-[10px] font-black text-[#4a5568] uppercase tracking-tighter">
@@ -274,33 +265,25 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-
                     <span className="bg-black/5 border border-black/5 px-3 py-1 rounded-full text-[10px] font-black text-[#15803d]">
                       {place.time}
                     </span>
-
                   </div>
                 ))}
-
               </div>
-
             </div>
-
           </div>
         </section>
 
         {/* Contact */}
         <section id="contact" className="py-12 mb-20">
           <div className="max-w-xl mx-auto p-10 border border-black/5 bg-white/40 backdrop-blur-md rounded-[48px] text-center shadow-xl">
-
             <h2 className="text-3xl font-black mb-4 text-black">
               Ready to visit?
             </h2>
-
             <p className="text-[#4a5568] mb-8 font-semibold">
               Message us on WhatsApp and we’ll reply with availability and rates.
             </p>
-
             <a
               href={waLink}
               target="_blank"
@@ -308,14 +291,12 @@ export default function Home() {
             >
               CHAT ON WHATSAPP
             </a>
-
             <div className="mt-8 pt-8 border-t border-black/10">
               <p className="font-bold text-black italic">Rian Rest Apartment</p>
               <p className="font-medium text-sm text-[#4a5568]">
                 {LOCATION_TEXT}
               </p>
             </div>
-
           </div>
         </section>
 
@@ -336,7 +317,6 @@ export default function Home() {
             className="max-w-full max-h-[80vh] rounded-2xl border-4 border-white/10"
             alt="Preview"
           />
-
           <p className="fixed bottom-10 text-white font-bold uppercase tracking-widest text-xs">
             Tap anywhere to close
           </p>
