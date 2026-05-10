@@ -258,6 +258,7 @@ export default function Home() {
                   { name: "Nolimit Dehiwala", dist: "1.5 km", time: "7 min", icon: "🛍️" },
                   { name: "Kalubowila Hospital", dist: "2.8 km", time: "12 min", icon: "🏥" },
                   { name: "Dehiwala Beach", dist: "3.0 km", time: "15 min", icon: "🏖️" },
+                  { name: "Marine Drive", dist: "14 km", time: "25 min", icon: "🛣️" },
                 ].map((place, i) => (
                   <div key={i} className="flex items-center justify-between group">
 
