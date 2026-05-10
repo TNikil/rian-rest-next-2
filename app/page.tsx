@@ -252,11 +252,12 @@ export default function Home() {
               <div className="space-y-6">
 
                 {[
-                  { name: "Dehiwala Zoo", dist: "1.4 km", time: "6 min", icon: "🦁" },
-                  { name: "Dehiwala Beach", dist: "3.0 km", time: "15 min", icon: "🏖️" },
-                  { name: "Wellawatte Beach", dist: "3.5 km", time: "16 min", icon: "🌊" },
-                  { name: "Kalubowila Hospital", dist: "2.8 km", time: "12 min", icon: "🏥" },
+                  { name: "Cargills Food City", dist: "500 m", time: "2 min", icon: "🛒" },
                   { name: "Food Hub (KFC/BK)", dist: "1.1 km", time: "5 min", icon: "🍔" },
+                  { name: "Dehiwala Zoo", dist: "1.4 km", time: "6 min", icon: "🦁" },
+                  { name: "Nolimit Dehiwala", dist: "1.5 km", time: "7 min", icon: "🛍️" },
+                  { name: "Kalubowila Hospital", dist: "2.8 km", time: "12 min", icon: "🏥" },
+                  { name: "Dehiwala Beach", dist: "3.0 km", time: "15 min", icon: "🏖️" },
                 ].map((place, i) => (
                   <div key={i} className="flex items-center justify-between group">
 
