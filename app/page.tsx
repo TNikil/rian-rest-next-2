@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 export default function Home() {
   const WHATSAPP_NUMBER = "+94764779861";
   const LOCATION_TEXT = "69A B547, Dehiwala-Mount Lavinia";
-  const DIRECTIONS_LINK = "https://maps.app.goo.gl/ChIJJXT6UABb4joRj71S3WQEKYI";
+  const DIRECTIONS_LINK = "https://www.google.com/maps/place/69A+B547,+Dehiwala-Mount+Lavinia/@6.8472947,79.8700813,19z";
   const WA_MESSAGE = "Hi! I would like to book Rian Rest. Please send availability, prices, and details. Thank you!";
   
   const amenities = [
