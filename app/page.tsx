@@ -29,67 +29,67 @@ export default function Home() {
     <div className="min-h-screen text-white selection:bg-white/30 font-sans bg-black">
       
       {/* Header with deep green gradient glow */}
-      <header className="sticky top-0 z-[60] backdrop-blur-md bg-black/80 border-b border-white/10"
+<header className="sticky top-0 z-[60] backdrop-blur-md bg-black/80 border-b border-white/10"
+  style={{
+    boxShadow: '0 0 40px rgba(34, 197, 94, 0.15)'
+  }}
+>
+  <div className="max-w-[1100px] mx-auto px-5 py-4 flex items-center justify-between relative">
+    
+    <a href="#top" className="transition-transform hover:scale-105 active:scale-95">
+      <img 
+        src="/logo.png" 
+        alt="Rian Rest Logo" 
+        /* Cleaned up: No white box, no brightness filters */
+        className="h-8 md:h-10 w-auto object-contain" 
+      />
+    </a>
+
+    <nav
+      className={`
+        ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'} 
+        md:translate-y-0 md:opacity-100 md:pointer-events-auto
+        fixed md:relative top-[72px] md:top-0 left-0 right-0 
+        flex flex-col md:flex-row items-center justify-center md:justify-start
+        gap-8 md:gap-6 p-12 md:p-0 bg-black/95 backdrop-blur-xl md:bg-transparent md:backdrop-blur-0
+        border-b md:border-none border-white/10 transition-all duration-300 ease-in-out z-[50] min-h-[60vh] md:min-h-0
+      `}
+    >
+      {['About', 'Photos', 'Amenities', 'Location', 'Contact'].map((item) => (
+        <a
+          key={item}
+          href={`#${item.toLowerCase()}`}
+          onClick={() => setIsMenuOpen(false)}
+          className="text-white font-black text-2xl md:text-sm hover:text-[#22c55e] transition-colors text-center"
+        >
+          {item}
+        </a>
+      ))}
+    </nav>
+
+    <div className="flex items-center gap-3">
+      <a
+        href={waLink}
+        target="_blank"
+        className="bg-[#22c55e] text-black px-4 py-2 rounded-full text-xs font-black hover:scale-105 hover:bg-white hover:text-[#22c55e] transition shadow-lg"
         style={{
-          boxShadow: '0 0 40px rgba(34, 197, 94, 0.15)'
+          boxShadow: '0 0 15px rgba(34, 197, 94, 0.4)'
         }}
       >
-        <div className="max-w-[1100px] mx-auto px-5 py-4 flex items-center justify-between relative">
-          
-          <a href="#top" className="transition-transform hover:scale-105 active:scale-95">
-            <img 
-              src="/logo.png" 
-              alt="Rian Rest Logo" 
-              className="h-8 md:h-10 w-auto object-contain brightness-0 invert" 
-            />
-          </a>
+        BOOK NOW
+      </a>
 
-          <nav
-            className={`
-              ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'} 
-              md:translate-y-0 md:opacity-100 md:pointer-events-auto
-              fixed md:relative top-[72px] md:top-0 left-0 right-0 
-              flex flex-col md:flex-row items-center justify-center md:justify-start
-              gap-8 md:gap-6 p-12 md:p-0 bg-black/95 backdrop-blur-xl md:bg-transparent md:backdrop-blur-0
-              border-b md:border-none border-white/10 transition-all duration-300 ease-in-out z-[50] min-h-[60vh] md:min-h-0
-            `}
-          >
-            {['About', 'Photos', 'Amenities', 'Location', 'Contact'].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-white font-black text-2xl md:text-sm hover:text-[#22c55e] transition-colors text-center"
-              >
-                {item}
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
-            {/* Green Book Now button with subtle glow */}
-            <a
-              href={waLink}
-              target="_blank"
-              className="bg-[#22c55e] text-black px-4 py-2 rounded-full text-xs font-black hover:scale-105 hover:bg-white hover:text-[#22c55e] transition shadow-lg"
-              style={{
-                boxShadow: '0 0 15px rgba(34, 197, 94, 0.4)'
-              }}
-            >
-              BOOK NOW
-            </a>
-
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden w-10 h-10 rounded-xl border border-white/10 bg-white/5 flex flex-col items-center justify-center gap-1.5"
-            >
-              <span className={`w-5 h-0.5 bg-white transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-              <span className={`w-5 h-0.5 bg-white transition-opacity ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`w-5 h-0.5 bg-white transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-            </button>
-          </div>
-        </div>
-      </header>
+      <button
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="md:hidden w-10 h-10 rounded-xl border border-white/10 bg-white/5 flex flex-col items-center justify-center gap-1.5"
+      >
+        <span className={`w-5 h-0.5 bg-white transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+        <span className={`w-5 h-0.5 bg-white transition-opacity ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+        <span className={`w-5 h-0.5 bg-white transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+      </button>
+    </div>
+  </div>
+</header>
 
       <main id="top" className="max-w-[1100px] mx-auto px-5 relative">
 
@@ -288,7 +288,7 @@ export default function Home() {
       </main>
 
       <footer className="py-10 border-t border-white/10 text-center text-white/20 text-xs font-bold">
-        <p>© {new Date().getFullYear()} Rian Rest. Built by Creovx.</p>
+        <p>© {new Date().getFullYear()} Rian Rest. Built by TNikil.</p>
       </footer>
 
       {/* Lightbox */}
