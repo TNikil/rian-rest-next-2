@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 export default function Home() {
   const WHATSAPP_NUMBER = "+94764779861";
   const LOCATION_TEXT = "68/D/1/1, Kawdana Road, Dehiwala, Sri Lanka";
-  const DIRECTIONS_LINK = "https://www.google.com/maps/place/69A+B547,+Dehiwala-Mount+Lavinia/@6.8472947,79.8700813,19z";
+  const DIRECTIONS_LINK = "https://maps.app.goo.gl/fyHXyLoEcC5SiogB6";
   const WA_MESSAGE = "Hi! I would like to book Rian Rest. Please send availability, prices, and details. Thank you!";
   
   const amenities = [
@@ -211,15 +211,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-[1fr_380px] gap-8 items-start">
             <div className="space-y-4">
               <div className="rounded-[32px] border border-white/10 overflow-hidden h-[450px] bg-white/5 shadow-inner">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d350.138124557147!2d79.87008130274859!3d6.847294720581908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b0314c24b27%3A0x786a6ca9c51d4b1d!2s69a%20B547%2C%20Dehiwala-Mount%20Lavinia!5e0!3m2!1sen!2slk!4v1778395923563!5m2!1sen!2slk"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+               <iframe src="https://www.google.com/maps?q=68/D/1/1,+Kawdana+RD,+Dehiwala&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
               </div>
               <a href={DIRECTIONS_LINK} target="_blank" className="block text-center w-full bg-white/5 border border-white/10 py-4 rounded-2xl font-bold text-sm text-white hover:bg-white/10 transition">
                 Open in Google Maps
