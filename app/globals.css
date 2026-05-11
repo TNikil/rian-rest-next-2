@@ -1,29 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  /* This changes the main background */
-  --background: #b1ccd6; 
-  --foreground: #171717;
+  --background: #000000; /* Changed from #F9FBFF to Black */
+  --foreground: #EDEDED; /* Changed from #2D3436 to Light Grey for readability */
+  --ocean-blue: #0047AB;
+  --tropical-green: #00B894;
+  --sand-beige: #F5E6CA;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-/* We update this section so it doesn't turn black on dark-mode devices */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #b1ccd6; 
-    --foreground: #171717;
-  }
+  --color-ocean: var(--ocean-blue);
+  --color-tropical: var(--tropical-green);
+  --color-sand: var(--sand-beige);
+  --font-lavish: var(--font-lavish);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  /* The layout uses Geist fonts, so we link them here */
-  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+  .font-lavish {
+    font-family: var(--font-lavish), serif;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
