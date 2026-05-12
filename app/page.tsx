@@ -198,7 +198,7 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-20 h-[400px] bg-white border border-[#eeeeee] p-2 shadow-sm">
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15846.50293144558!2d79.8659178!3d6.8143213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b0000000000%3A0x0!2zNsKwNDgnNTEuNSJOIDc5wrA1MicxNy4zIkU!5e0!3m2!1sen!2slk!4v1715000000000!5m2!1sen!2slk" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
+               <iframe src="https://www.google.com/maps?q=68/D/1/1,+Kawdana+RD,+Dehiwala&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
             </div>
           </div>
         </section>
