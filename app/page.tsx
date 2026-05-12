@@ -1,5 +1,6 @@
 "use client";
 
+import { Home as HouseIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
@@ -32,7 +33,10 @@ export default function Home() {
         style={{ boxSizing: 'border-box' }}
       >
         <div className="max-w-[1100px] mx-auto px-5 py-6 flex items-center justify-between">
-          <a href="#top" className="transition-transform hover:opacity-70">
+          {/* Logo Section with House Icon and Separator */}
+          <a href="#top" className="flex items-center gap-3 transition-transform hover:opacity-70">
+             <HouseIcon size={24} className="text-[#2D3648]" strokeWidth={2} />
+             <div className="w-[1.5px] h-6 bg-black/10"></div>
              <img src="/logo.png" alt="Rian Rest Logo" className="h-10 md:h-12 w-auto object-contain" />
           </a>
 
@@ -90,7 +94,6 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl font-playfair leading-[1.1] mb-8 uppercase tracking-tight">
               A refined stay <br/>in the heart of city.
             </h1>
-            {/* Added text-justify and hyphens-auto to justify description */}
             <p className="text-[#444444] text-lg md:text-xl leading-relaxed mb-12 max-w-md font-railway text-justify [hyphens:auto]">
               An SLTDA approved sanctuary designed for those who seek tranquility, comfort, and effortless convenience.
             </p>
@@ -111,7 +114,6 @@ export default function Home() {
               ].map((item, i) => (
                 <div key={i} className="space-y-5">
                   <h3 className="text-[15px] font-black tracking-[0.25em] uppercase">{item.h}</h3>
-                  {/* Added text-justify and hyphens-auto to clean up grid descriptions */}
                   <p className="text-[#333333] text-base md:text-lg leading-relaxed font-railway text-justify [hyphens:auto]">
                     {item.p}
                   </p>
@@ -190,7 +192,7 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-20 h-[400px] md:h-[450px] bg-white border border-black/5 p-2 shadow-sm">
-                <iframe src="https://www.google.com/maps?q=68/D/1/1,+Kawdana+RD,+Dehiwala&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15844.2!2d79.8!3d6.8!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDgnMTEuNSJOIDc5wrA1MycyOC4yIkU!5e0!3m2!1sen!2slk!4v1" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
             </div>
           </div>
         </section>
