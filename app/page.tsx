@@ -26,10 +26,10 @@ export default function Home() {
   const galleryImages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   return (
-    <div className="min-h-screen text-[#222222] selection:bg-black selection:text-white font-sans bg-[#AABDCC]">
+    <div className="min-h-screen text-[#222222] selection:bg-black selection:text-white font-sans bg-[#F0F4F7]">
       
-      {/* Header */}
-      <header className="sticky top-0 z-[60] backdrop-blur-md bg-[#AABDCC]/90 border-b border-[#eeeeee]">
+      {/* Header - Fixed to match main bg */}
+      <header className="sticky top-0 z-[60] backdrop-blur-md bg-[#F0F4F7]/90 border-b border-black/5">
         <div className="max-w-[1100px] mx-auto px-5 py-5 flex items-center justify-between">
           
           <a href="#top" className="transition-transform hover:opacity-70">
@@ -72,7 +72,7 @@ export default function Home() {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-[#AABDCC] flex flex-col items-center justify-center gap-12 md:hidden">
+        <div className="fixed inset-0 z-[100] bg-[#F0F4F7] flex flex-col items-center justify-center gap-12 md:hidden">
           <button 
             onClick={() => setIsMenuOpen(false)} 
             className="absolute top-7 right-5 text-black text-3xl p-2"
@@ -104,7 +104,7 @@ export default function Home() {
       )}
 
       <main id="top">
-        {/* Hero Section */}
+        {/* Hero Section - Base Color */}
         <section className="max-w-[1100px] mx-auto px-5 pt-20 pb-24 grid md:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
           <div>
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#666666] mb-4 block">
@@ -125,13 +125,13 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="aspect-[4/5] bg-white/20 relative overflow-hidden shadow-sm">
+          <div className="aspect-[4/5] bg-white/40 relative overflow-hidden shadow-sm">
             <img src="/images/hero.jpg" alt="Interior" className="w-full h-full object-cover" />
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" className="bg-white/10 py-24">
+        {/* About Section - Variation: Brighter Whitish Blue (#F8FAFC) */}
+        <section id="about" className="bg-[#F8FAFC] py-24 border-y border-black/5">
           <div className="max-w-[1100px] mx-auto px-5">
             <div className="grid md:grid-cols-3 gap-16">
               <div className="space-y-4">
@@ -150,7 +150,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Photo Gallery */}
+        {/* Photo Gallery - Base Color */}
         <section id="photos" className="py-24 max-w-[1100px] mx-auto px-5 text-center">
           <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase mb-16">The Gallery</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -158,7 +158,7 @@ export default function Home() {
               <div 
                 key={num} 
                 onClick={() => setSelectedImage(`/images/${num}.jpg`)} 
-                className="aspect-square bg-white/20 cursor-pointer hover:opacity-80 transition-opacity overflow-hidden"
+                className="aspect-square bg-white/40 cursor-pointer hover:opacity-80 transition-opacity overflow-hidden"
               >
                 <img src={`/images/${num}.jpg`} className="w-full h-full object-cover" alt="Gallery" />
               </div>
@@ -166,7 +166,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Amenities */}
+        {/* Amenities - Base Color */}
         <section id="amenities" className="py-24 border-t border-black/10 max-w-[1100px] mx-auto px-5 text-center">
           <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase mb-12">Curated Amenities</h2>
           <div className="flex flex-wrap justify-center gap-4">
@@ -178,8 +178,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Location */}
-        <section id="location" className="py-24 bg-white/10">
+        {/* Location - Variation: Brighter Whitish Blue (#F8FAFC) */}
+        <section id="location" className="py-24 bg-[#F8FAFC] border-t border-black/5">
           <div className="max-w-[1100px] mx-auto px-5">
             <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase mb-20 text-center">Proximity Guide</h2>
             <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-y-16 gap-x-12">
@@ -197,13 +197,14 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="mt-20 h-[400px] bg-white/20 border border-black/5 p-2 shadow-sm">
+            <div className="mt-20 h-[400px] bg-white border border-black/5 p-2 shadow-sm">
                <iframe src="https://www.google.com/maps?q=68/D/1/1,+Kawdana+RD,+Dehiwala&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
             </div>
           </div>
         </section>
       </main>
 
+      {/* Footer - Base Color */}
       <footer className="py-20 text-center border-t border-black/10">
         <p className="text-[10px] font-bold tracking-[0.5em] uppercase text-black/40 mb-4">Rian Rest Apartment</p>
         <p className="text-[9px] text-black/30 tracking-[0.2em] uppercase">© {new Date().getFullYear()} — Built by Creovx</p>
@@ -211,7 +212,7 @@ export default function Home() {
 
       {/* Lightbox */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-[#AABDCC]/98 z-[100] flex items-center justify-center p-8" onClick={() => setSelectedImage(null)}>
+        <div className="fixed inset-0 bg-[#F0F4F7]/98 z-[100] flex items-center justify-center p-8" onClick={() => setSelectedImage(null)}>
           <img src={selectedImage} className="max-w-full max-h-[85vh] shadow-2xl" alt="Preview" />
         </div>
       )}
