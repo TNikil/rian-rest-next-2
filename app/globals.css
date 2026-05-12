@@ -1,45 +1,37 @@
+/* LINE 1: All imports must be here */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 @import "tailwindcss";
 
 :root {
-  /* Refined One&Only Palette */
-  --background: #ffffff;      /* Main Base */
-  --foreground: #222222;      /* Deep Charcoal instead of pure black */
-  --muted-bg: #f8f8f8;        /* The subtle grey layer seen in ref image */
-  --accent: #22c55e;          /* Your signature green */
-  --border: #eeeeee;          /* Very light divider lines */
+  --background: #ffffff;
+  --foreground: #222222;
+  --muted-bg: #f8f8f8;
+  --accent: #22c55e;
+  --border: #eeeeee;
+  
+  --font-raleway: 'Raleway', sans-serif;
 }
+
+/* ... everything else follows below ... */
 
 @theme inline {
   --color-accent: var(--accent);
   --color-muted: var(--muted);
 }
 
+/* ... the rest of your 800+ lines of CSS ... */
+
 body {
   background: var(--background);
   color: var(--foreground);
-  /* Keeping your font variables intact */
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Luxury Serif Class for those elegant titles */
-.font-playfair {
-  font-family: var(--font-playfair), serif;
-  letter-spacing: 0.02em;
+.font-railway {
+  font-family: var(--font-raleway);
+  letter-spacing: 0.01em;
+  line-height: 1.6;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-/* Cleaner scrollbar for the white theme */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #ffffff;
-}
-::-webkit-scrollbar-thumb {
-  background: #e5e5e5;
-  border-radius: 10px;
-}
+/* ... rest of the file ... */
