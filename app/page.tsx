@@ -30,11 +30,7 @@ export default function Home() {
       <header className="sticky top-0 z-[60] backdrop-blur-md bg-[#F0F4F7]/90 border-b border-black/5">
         <div className="max-w-[1100px] mx-auto px-5 py-6 flex items-center justify-between">
           <a href="#top" className="transition-transform hover:opacity-70">
-             <img 
-               src="/logo.png" 
-               alt="Rian Rest Logo" 
-               className="h-10 md:h-12 w-auto object-contain" 
-             />
+             <img src="/logo.png" alt="Rian Rest Logo" className="h-10 md:h-12 w-auto object-contain" />
           </a>
 
           <nav className="hidden md:flex items-center gap-10">
@@ -49,7 +45,7 @@ export default function Home() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4 md:gap-6">
+          <div className="flex items-center gap-4">
             <a 
               href={waLink} 
               target="_blank" 
@@ -57,22 +53,22 @@ export default function Home() {
             >
               BOOK NOW
             </a>
-            <button onClick={() => setIsMenuOpen(true)} className="md:hidden text-black text-4xl">☰</button>
+            <button onClick={() => setIsMenuOpen(true)} className="md:hidden text-black text-3xl">☰</button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* COMPACT MOBILE NAV MENU */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-[#F0F4F7] flex flex-col items-center justify-center gap-14 md:hidden">
-          <button onClick={() => setIsMenuOpen(false)} className="absolute top-8 right-6 text-black text-5xl p-2">✕</button>
-          <img src="/logo.png" alt="Logo" className="h-12 w-auto mb-6" />
+        <div className="fixed inset-0 z-[100] bg-[#F0F4F7] flex flex-col items-center justify-center gap-8 md:hidden">
+          <button onClick={() => setIsMenuOpen(false)} className="absolute top-8 right-6 text-black text-3xl p-2">✕</button>
+          <img src="/logo.png" alt="Logo" className="h-10 w-auto mb-4" />
           {['About', 'Photos', 'Amenities', 'Location'].map((item) => (
             <a 
               key={item} 
               href={`#${item.toLowerCase()}`} 
               onClick={() => setIsMenuOpen(false)}
-              className="text-4xl font-serif tracking-[0.2em] uppercase font-black hover:text-[#22c55e]"
+              className="text-2xl font-serif tracking-[0.15em] uppercase font-bold hover:text-[#22c55e]"
             >
               {item}
             </a>
@@ -91,10 +87,6 @@ export default function Home() {
             <p className="text-[#444444] text-xl md:text-2xl leading-relaxed mb-12 max-w-md font-medium">
               An SLTDA approved sanctuary designed for those who seek tranquility, comfort, and effortless convenience.
             </p>
-            <div className="flex gap-10">
-              <a href="#photos" className="border-b-2 border-black pb-1 text-[11px] font-bold tracking-[0.2em] uppercase hover:text-[#22c55e] transition-all">View Gallery</a>
-              <a href="#location" className="border-b-2 border-black pb-1 text-[11px] font-bold tracking-[0.2em] uppercase hover:text-[#22c55e] transition-all">Location</a>
-            </div>
           </div>
           <div className="aspect-[4/5] bg-white/40 relative overflow-hidden shadow-sm hidden md:block">
             <img src="/images/hero.jpg" alt="Interior" className="w-full h-full object-cover" />
@@ -105,77 +97,54 @@ export default function Home() {
         <section id="about" className="bg-[#F8FAFC] py-24 md:py-28 border-y border-black/5">
           <div className="max-w-[1100px] mx-auto px-5">
             <div className="grid md:grid-cols-3 gap-16">
-              <div className="space-y-5">
-                <h3 className="text-[15px] font-black tracking-[0.25em] uppercase">Clean & Cozy</h3>
-                <p className="text-[#333333] text-base md:text-lg leading-relaxed font-medium">A meticulously maintained private space designed for absolute relaxation.</p>
-              </div>
-              <div className="space-y-5">
-                <h3 className="text-[15px] font-black tracking-[0.25em] uppercase">Prime Location</h3>
-                <p className="text-[#333333] text-base md:text-lg leading-relaxed font-medium">Nestled in Dehiwala, minutes away from premium dining and travel hubs.</p>
-              </div>
-              <div className="space-y-5">
-                <h3 className="text-[15px] font-black tracking-[0.25em] uppercase">Direct Support</h3>
-                <p className="text-[#333333] text-base md:text-lg leading-relaxed font-medium">Seamless communication via WhatsApp for personalized booking.</p>
-              </div>
+              {[
+                {h: "Clean & Cozy", p: "A meticulously maintained private space designed for absolute relaxation."},
+                {h: "Prime Location", p: "Nestled in Dehiwala, minutes away from premium dining and travel hubs."},
+                {h: "Direct Support", p: "Seamless communication via WhatsApp for personalized booking."}
+              ].map((item, i) => (
+                <div key={i} className="space-y-5">
+                  <h3 className="text-[15px] font-black tracking-[0.25em] uppercase">{item.h}</h3>
+                  <p className="text-[#333333] text-base md:text-lg leading-relaxed font-medium">{item.p}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* --- DUAL-VIEW GALLERY SECTION --- */}
+        {/* Gallery Section */}
         <section id="photos" className="py-20 md:py-32 bg-[#F0F4F7]">
           <div className="max-w-[1100px] mx-auto px-5">
-            
-            {/* PC VIEW: Vertical Filmstrip Design */}
+            {/* PC: Vertical Filmstrip */}
             <div className="hidden md:grid md:grid-cols-[1fr_350px] gap-12 items-start">
               <div className="aspect-[16/10] bg-white p-3 shadow-2xl overflow-hidden">
-                <img 
-                  src={selectedImage} 
-                  alt="Main View" 
-                  className="w-full h-full object-cover transition-all duration-500"
-                />
+                <img src={selectedImage} alt="Main" className="w-full h-full object-cover transition-all duration-500" />
               </div>
-
               <div className="flex flex-col gap-8">
-                <div>
-                  <h2 className="text-[12px] font-black tracking-[0.5em] uppercase text-black/30 mb-4">The Gallery</h2>
-                  <p className="text-5xl font-serif italic uppercase mb-6 leading-tight">Living Space</p>
-                  <p className="text-[10px] font-bold tracking-[0.2em] text-black/40 uppercase">Click a thumbnail to explore</p>
-                </div>
-
+                {/* MATCHED TYPOGRAPHY: THE GALLERY */}
+                <h2 className="text-[12px] font-black tracking-[0.4em] uppercase text-[#222222]">The Gallery</h2>
                 <div className="grid grid-cols-3 gap-3">
                   {galleryImages.map((num) => (
                     <div 
                       key={num} 
                       onClick={() => setSelectedImage(`/images/${num}.jpg`)} 
-                      className={`aspect-square cursor-pointer overflow-hidden transition-all duration-300 border-2 ${
-                          selectedImage === `/images/${num}.jpg` ? 'border-[#22c55e] scale-95' : 'border-transparent opacity-60 hover:opacity-100'
-                      }`}
+                      className={`aspect-square cursor-pointer overflow-hidden transition-all duration-300 border-2 ${selectedImage === `/images/${num}.jpg` ? 'border-[#22c55e]' : 'border-transparent opacity-60'}`}
                     >
-                      <img src={`/images/${num}.jpg`} className="w-full h-full object-cover" alt={`Thumb ${num}`}/>
+                      <img src={`/images/${num}.jpg`} className="w-full h-full object-cover" />
                     </div>
                   ))}
                 </div>
               </div>
             </div>
-
-            {/* MOBILE VIEW: 2-Column Grid */}
+            {/* Mobile: 2-Col Grid */}
             <div className="md:hidden">
-              <div className="mb-10">
-                <h2 className="text-[12px] font-black tracking-[0.5em] uppercase text-black/30 mb-2">The Gallery</h2>
-                <p className="text-4xl font-serif italic uppercase">Spaces</p>
-              </div>
+              <h2 className="text-[12px] font-black tracking-[0.4em] uppercase text-[#222222] mb-6">The Gallery</h2>
               <div className="grid grid-cols-2 gap-3">
                 {galleryImages.map((num) => (
-                  <div key={num} className="w-full aspect-square bg-white shadow-md overflow-hidden rounded-sm">
-                    <img 
-                      src={`/images/${num}.jpg`} 
-                      className="w-full h-full object-cover" 
-                      alt={`Apartment view ${num}`} 
-                    />
+                  <div key={num} className="aspect-square bg-white shadow-md overflow-hidden rounded-sm">
+                    <img src={`/images/${num}.jpg`} className="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>
-              <p className="text-center mt-8 text-[10px] font-black tracking-[0.2em] text-black/30 uppercase italic">End of Gallery</p>
             </div>
           </div>
         </section>
@@ -192,7 +161,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Location Section - UPDATED PROXIMITY GUIDE */}
+        {/* Location Section */}
         <section id="location" className="py-24 bg-[#F8FAFC] border-t border-black/5">
           <div className="max-w-[1100px] mx-auto px-5">
             <h2 className="text-[12px] font-black tracking-[0.4em] uppercase mb-20 text-center">Proximity Guide</h2>
@@ -212,8 +181,9 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            {/* RESTORED ORIGINAL MAP SOURCE */}
             <div className="mt-20 h-[400px] md:h-[450px] bg-white border border-black/5 p-2 shadow-sm">
-               <iframe src="https://www.google.com/maps?q=68/D/1/1,+Kawdana+RD,+Dehiwala&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
+              <iframe src="https://www.google.com/maps?q=68/D/1/1,+Kawdana+RD,+Dehiwala&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
             </div>
           </div>
         </section>
