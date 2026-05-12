@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <div className="min-h-screen text-[#222222] selection:bg-black selection:text-white font-sans bg-white">
       
-      {/* Header - Refined White with thin border */}
+      {/* Header */}
       <header className="sticky top-0 z-[60] backdrop-blur-md bg-white/90 border-b border-[#eeeeee]">
         <div className="max-w-[1100px] mx-auto px-5 py-5 flex items-center justify-between">
           
@@ -56,18 +56,51 @@ export default function Home() {
             >
               BOOK NOW
             </a>
+            {/* Hamburger Button */}
             <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)} 
+              onClick={() => setIsMenuOpen(true)} 
               className="md:hidden text-black text-2xl"
             >
-              {isMenuOpen ? '✕' : '☰'}
+              ☰
             </button>
           </div>
         </div>
       </header>
 
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center gap-12 md:hidden">
+          {/* Close Button Inside Overlay */}
+          <button 
+            onClick={() => setIsMenuOpen(false)} 
+            className="absolute top-7 right-5 text-black text-3xl p-2"
+          >
+            ✕
+          </button>
+
+          {['About', 'Photos', 'Amenities', 'Location'].map((item) => (
+            <a 
+              key={item} 
+              href={`#${item.toLowerCase()}`} 
+              onClick={() => setIsMenuOpen(false)}
+              className="text-3xl font-serif tracking-[0.3em] uppercase font-bold hover:text-[#22c55e] transition-colors"
+            >
+              {item}
+            </a>
+          ))}
+          
+          <a 
+            href={waLink} 
+            onClick={() => setIsMenuOpen(false)}
+            className="mt-4 border-b border-black pb-1 text-[10px] font-bold tracking-[0.2em] uppercase"
+          >
+            Contact via WhatsApp
+          </a>
+        </div>
+      )}
+
       <main id="top">
-        {/* Hero Section - Pure White with Editorial Typography */}
+        {/* Hero Section */}
         <section className="max-w-[1100px] mx-auto px-5 pt-20 pb-24 grid md:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
           <div>
             <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#999999] mb-4 block">
@@ -93,7 +126,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Section - Sublte Grey Layer (One&Only Style) */}
+        {/* About Section */}
         <section id="about" className="bg-[#f9f9f9] py-24">
           <div className="max-w-[1100px] mx-auto px-5">
             <div className="grid md:grid-cols-3 gap-16">
@@ -113,7 +146,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Photo Gallery - Back to Pure White */}
+        {/* Photo Gallery */}
         <section id="photos" className="py-24 max-w-[1100px] mx-auto px-5 text-center">
           <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase mb-16">The Gallery</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -129,7 +162,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Amenities - Clean Labels */}
+        {/* Amenities */}
         <section id="amenities" className="py-24 border-t border-[#eeeeee] max-w-[1100px] mx-auto px-5 text-center">
           <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase mb-12">Curated Amenities</h2>
           <div className="flex flex-wrap justify-center gap-4">
@@ -141,7 +174,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Location - Layered Section */}
+        {/* Location */}
         <section id="location" className="py-24 bg-[#f9f9f9]">
           <div className="max-w-[1100px] mx-auto px-5">
             <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase mb-20 text-center">Proximity Guide</h2>
