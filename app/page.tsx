@@ -26,10 +26,10 @@ export default function Home() {
   const galleryImages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   return (
-    <div className="min-h-screen text-[#222222] selection:bg-black selection:text-white font-sans bg-white">
+    <div className="min-h-screen text-[#222222] selection:bg-black selection:text-white font-sans bg-[#AABDCC]">
       
       {/* Header */}
-      <header className="sticky top-0 z-[60] backdrop-blur-md bg-white/90 border-b border-[#eeeeee]">
+      <header className="sticky top-0 z-[60] backdrop-blur-md bg-[#AABDCC]/90 border-b border-[#eeeeee]">
         <div className="max-w-[1100px] mx-auto px-5 py-5 flex items-center justify-between">
           
           <a href="#top" className="transition-transform hover:opacity-70">
@@ -72,7 +72,7 @@ export default function Home() {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center gap-12 md:hidden">
+        <div className="fixed inset-0 z-[100] bg-[#AABDCC] flex flex-col items-center justify-center gap-12 md:hidden">
           <button 
             onClick={() => setIsMenuOpen(false)} 
             className="absolute top-7 right-5 text-black text-3xl p-2"
@@ -107,13 +107,13 @@ export default function Home() {
         {/* Hero Section */}
         <section className="max-w-[1100px] mx-auto px-5 pt-20 pb-24 grid md:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
           <div>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#999999] mb-4 block">
+            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#666666] mb-4 block">
               Private Apartment • Dehiwala
             </span>
             <h1 className="text-5xl md:text-7xl font-serif leading-[1.1] mb-8 uppercase tracking-tight">
               A refined stay <br/>in the <span className="italic">heart</span> of city.
             </h1>
-            <p className="text-[#666666] text-lg md:text-xl leading-relaxed mb-12 max-w-md font-medium">
+            <p className="text-[#444444] text-lg md:text-xl leading-relaxed mb-12 max-w-md font-medium">
               An SLTDA approved sanctuary designed for those who seek tranquility, comfort, and effortless convenience.
             </p>
             <div className="flex gap-8">
@@ -125,26 +125,26 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="aspect-[4/5] bg-[#f9f9f9] relative overflow-hidden shadow-sm">
+          <div className="aspect-[4/5] bg-white/20 relative overflow-hidden shadow-sm">
             <img src="/images/hero.jpg" alt="Interior" className="w-full h-full object-cover" />
           </div>
         </section>
 
         {/* About Section */}
-        <section id="about" className="bg-[#f9f9f9] py-24">
+        <section id="about" className="bg-white/10 py-24">
           <div className="max-w-[1100px] mx-auto px-5">
             <div className="grid md:grid-cols-3 gap-16">
               <div className="space-y-4">
                 <h3 className="text-[11px] font-bold tracking-[0.3em] uppercase">Clean & Cozy</h3>
-                <p className="text-[#666666] text-sm leading-relaxed">A meticulously maintained private space designed for absolute relaxation and peace of mind.</p>
+                <p className="text-[#333333] text-sm leading-relaxed">A meticulously maintained private space designed for absolute relaxation and peace of mind.</p>
               </div>
               <div className="space-y-4">
                 <h3 className="text-[11px] font-bold tracking-[0.3em] uppercase">Prime Location</h3>
-                <p className="text-[#666666] text-sm leading-relaxed">Nestled in Dehiwala, minutes away from premium dining and essential travel hubs.</p>
+                <p className="text-[#333333] text-sm leading-relaxed">Nestled in Dehiwala, minutes away from premium dining and essential travel hubs.</p>
               </div>
               <div className="space-y-4">
                 <h3 className="text-[11px] font-bold tracking-[0.3em] uppercase">Direct Support</h3>
-                <p className="text-[#666666] text-sm leading-relaxed">Seamless communication via WhatsApp for personalized booking and instant assistance.</p>
+                <p className="text-[#333333] text-sm leading-relaxed">Seamless communication via WhatsApp for personalized booking and instant assistance.</p>
               </div>
             </div>
           </div>
@@ -158,7 +158,7 @@ export default function Home() {
               <div 
                 key={num} 
                 onClick={() => setSelectedImage(`/images/${num}.jpg`)} 
-                className="aspect-square bg-[#f9f9f9] cursor-pointer hover:opacity-80 transition-opacity overflow-hidden"
+                className="aspect-square bg-white/20 cursor-pointer hover:opacity-80 transition-opacity overflow-hidden"
               >
                 <img src={`/images/${num}.jpg`} className="w-full h-full object-cover" alt="Gallery" />
               </div>
@@ -167,19 +167,19 @@ export default function Home() {
         </section>
 
         {/* Amenities */}
-        <section id="amenities" className="py-24 border-t border-[#eeeeee] max-w-[1100px] mx-auto px-5 text-center">
+        <section id="amenities" className="py-24 border-t border-black/10 max-w-[1100px] mx-auto px-5 text-center">
           <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase mb-12">Curated Amenities</h2>
           <div className="flex flex-wrap justify-center gap-4">
             {amenities.map((item) => (
-              <div key={item} className="px-6 py-3 border border-[#eeeeee] text-[10px] font-bold tracking-[0.2em] uppercase text-[#666666]">
+              <div key={item} className="px-6 py-3 border border-black/10 text-[10px] font-bold tracking-[0.2em] uppercase text-[#333333]">
                 {item}
               </div>
             ))}
           </div>
         </section>
 
-        {/* Location - Updated Guide */}
-        <section id="location" className="py-24 bg-[#f9f9f9]">
+        {/* Location */}
+        <section id="location" className="py-24 bg-white/10">
           <div className="max-w-[1100px] mx-auto px-5">
             <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase mb-20 text-center">Proximity Guide</h2>
             <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-y-16 gap-x-12">
@@ -190,28 +190,28 @@ export default function Home() {
                 { name: "Kalubowila Hospital", dist: "2.8 km", time: "12 MIN" },
                 { name: "Airport (BIA)", dist: "42 km", time: "55 MIN" },
               ].map((place, i) => (
-                <div key={i} className="border-l border-[#dddddd] pl-8">
-                  <p className="text-[9px] font-bold text-[#999999] tracking-[0.2em] mb-3">{place.time}</p>
+                <div key={i} className="border-l border-black/20 pl-8">
+                  <p className="text-[9px] font-bold text-black/40 tracking-[0.2em] mb-3">{place.time}</p>
                   <p className="text-[12px] font-bold tracking-[0.1em] uppercase mb-1">{place.name}</p>
-                  <p className="text-[11px] text-[#999999] uppercase">{place.dist}</p>
+                  <p className="text-[11px] text-black/50 uppercase">{place.dist}</p>
                 </div>
               ))}
             </div>
-            <div className="mt-20 h-[400px] bg-white border border-[#eeeeee] p-2 shadow-sm">
-               <iframe src="https://www.google.com/maps?q=68/D/1/1,+Kawdana+RD,+Dehiwala&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
+            <div className="mt-20 h-[400px] bg-white/20 border border-black/5 p-2 shadow-sm">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15846.50293144558!2d79.8659178!3d6.8143213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b0000000000%3A0x0!2zNsKwNDgnNTEuNSJOIDc5wrA1MicxNy4zIkU!5e0!3m2!1sen!2slk!4v1715000000000!5m2!1sen!2slk" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="py-20 text-center border-t border-[#eeeeee]">
-        <p className="text-[10px] font-bold tracking-[0.5em] uppercase text-[#999999] mb-4">Rian Rest Apartment</p>
-        <p className="text-[9px] text-[#cccccc] tracking-[0.2em] uppercase">© {new Date().getFullYear()} — Built by Creovx</p>
+      <footer className="py-20 text-center border-t border-black/10">
+        <p className="text-[10px] font-bold tracking-[0.5em] uppercase text-black/40 mb-4">Rian Rest Apartment</p>
+        <p className="text-[9px] text-black/30 tracking-[0.2em] uppercase">© {new Date().getFullYear()} — Built by Creovx</p>
       </footer>
 
       {/* Lightbox */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-white/98 z-[100] flex items-center justify-center p-8" onClick={() => setSelectedImage(null)}>
+        <div className="fixed inset-0 bg-[#AABDCC]/98 z-[100] flex items-center justify-center p-8" onClick={() => setSelectedImage(null)}>
           <img src={selectedImage} className="max-w-full max-h-[85vh] shadow-2xl" alt="Preview" />
         </div>
       )}
