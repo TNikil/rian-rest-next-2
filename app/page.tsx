@@ -41,7 +41,7 @@ export default function Home() {
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`} 
-                className="text-[13px] font-extrabold tracking-[0.2em] uppercase hover:text-[#FC563C] transition-colors"
+                className="text-[13px] font-extrabold tracking-[0.2em] uppercase hover:text-[#7EB0D2] transition-colors"
               >
                 {item}
               </a>
@@ -53,9 +53,9 @@ export default function Home() {
               href={waLink} 
               target="_blank" 
               className="text-white px-6 md:px-8 py-3 text-[11px] md:text-[12px] font-bold tracking-[0.15em] uppercase transition-all shadow-sm"
-              style={{ backgroundColor: '#FC563C' }}
-              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#22c55e')}
-              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#FC563C')}
+              style={{ backgroundColor: '#2D3648' }}
+              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#7EB0D2')}
+              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#2D3648')}
             >
               BOOK NOW
             </a>
@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* COMPACT MOBILE NAV MENU */}
+      {/* MOBILE NAV MENU */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-[100] bg-[#F0F4F7] flex flex-col items-center justify-center gap-8 md:hidden">
           <button onClick={() => setIsMenuOpen(false)} className="absolute top-8 right-6 text-black text-3xl p-2">✕</button>
@@ -74,7 +74,7 @@ export default function Home() {
               key={item} 
               href={`#${item.toLowerCase()}`} 
               onClick={() => setIsMenuOpen(false)}
-              className="text-2xl font-serif tracking-[0.15em] uppercase font-bold hover:text-[#FC563C]"
+              className="text-2xl font-serif tracking-[0.15em] uppercase font-bold hover:text-[#7EB0D2]"
             >
               {item}
             </a>
@@ -83,14 +83,15 @@ export default function Home() {
       )}
 
       <main id="top">
-        {/* Hero Section - UPDATED: No italics on "heart" and modern sans-serif description */}
+        {/* Hero Section */}
         <section className="max-w-[1100px] mx-auto px-5 pt-12 md:pt-24 pb-24 md:pb-28 grid md:grid-cols-[1.2fr_0.8fr] gap-12 md:gap-16 items-center">
           <div>
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#666666] mb-4 block">Private Apartment • Dehiwala</span>
-            <h1 className="text-5xl md:text-7xl font-serif leading-[1.1] mb-8 uppercase tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-playfair leading-[1.1] mb-8 uppercase tracking-tight">
               A refined stay <br/>in the heart of city.
             </h1>
-            <p className="text-[#444444] text-lg md:text-xl leading-relaxed mb-12 max-w-md font-sans font-normal tracking-wide">
+            {/* Added text-justify and hyphens-auto to justify description */}
+            <p className="text-[#444444] text-lg md:text-xl leading-relaxed mb-12 max-w-md font-railway text-justify [hyphens:auto]">
               An SLTDA approved sanctuary designed for those who seek tranquility, comfort, and effortless convenience.
             </p>
           </div>
@@ -110,7 +111,10 @@ export default function Home() {
               ].map((item, i) => (
                 <div key={i} className="space-y-5">
                   <h3 className="text-[15px] font-black tracking-[0.25em] uppercase">{item.h}</h3>
-                  <p className="text-[#333333] text-base md:text-lg leading-relaxed font-medium">{item.p}</p>
+                  {/* Added text-justify and hyphens-auto to clean up grid descriptions */}
+                  <p className="text-[#333333] text-base md:text-lg leading-relaxed font-railway text-justify [hyphens:auto]">
+                    {item.p}
+                  </p>
                 </div>
               ))}
             </div>
@@ -131,10 +135,10 @@ export default function Home() {
                     <div 
                       key={num} 
                       onClick={() => setSelectedImage(`/images/${num}.jpg`)} 
-                      className={`aspect-square cursor-pointer overflow-hidden transition-all duration-300 border-2 ${selectedImage === `/images/${num}.jpg` ? 'border-[#FC563C]' : 'border-transparent opacity-60'}`}
-                      style={{ borderColor: selectedImage === `/images/${num}.jpg` ? '#FC563C' : 'transparent' }}
+                      className={`aspect-square cursor-pointer overflow-hidden transition-all duration-300 border-2`}
+                      style={{ borderColor: selectedImage === `/images/${num}.jpg` ? '#2D3648' : 'transparent' }}
                     >
-                      <img src={`/images/${num}.jpg`} className="w-full h-full object-cover" />
+                      <img src={`/images/${num}.jpg`} className="w-full h-full object-cover" alt="Gallery item" />
                     </div>
                   ))}
                 </div>
@@ -145,7 +149,7 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-3">
                 {galleryImages.map((num) => (
                   <div key={num} className="aspect-square bg-white shadow-md overflow-hidden rounded-sm">
-                    <img src={`/images/${num}.jpg`} className="w-full h-full object-cover" />
+                    <img src={`/images/${num}.jpg`} className="w-full h-full object-cover" alt="Gallery item" />
                   </div>
                 ))}
               </div>
@@ -186,7 +190,7 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-20 h-[400px] md:h-[450px] bg-white border border-black/5 p-2 shadow-sm">
-               <iframe src="https://www.google.com/maps?q=68/D/1/1,+Kawdana+RD,+Dehiwala&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15844.2!2d79.8!3d6.8!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDgnMTEuNSJOIDc5wrA1MycyOC4yIkU!5e0!3m2!1sen!2slk!4v1" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
             </div>
           </div>
         </section>
