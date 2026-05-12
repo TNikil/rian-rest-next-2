@@ -38,7 +38,7 @@ export default function Home() {
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`} 
-                className="text-[13px] font-extrabold tracking-[0.2em] uppercase hover:text-[#22c55e] transition-colors"
+                className="text-[13px] font-extrabold tracking-[0.2em] uppercase hover:text-[#FC563C] transition-colors"
               >
                 {item}
               </a>
@@ -49,7 +49,10 @@ export default function Home() {
             <a 
               href={waLink} 
               target="_blank" 
-              className="bg-[#22c55e] text-white px-6 md:px-8 py-3 text-[11px] md:text-[12px] font-bold tracking-[0.15em] uppercase hover:bg-black transition-all shadow-sm"
+              className="text-white px-6 md:px-8 py-3 text-[11px] md:text-[12px] font-bold tracking-[0.15em] uppercase transition-all shadow-sm"
+              style={{ backgroundColor: '#FC563C' }}
+              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#22c55e')}
+              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#FC563C')}
             >
               BOOK NOW
             </a>
@@ -68,7 +71,7 @@ export default function Home() {
               key={item} 
               href={`#${item.toLowerCase()}`} 
               onClick={() => setIsMenuOpen(false)}
-              className="text-2xl font-serif tracking-[0.15em] uppercase font-bold hover:text-[#22c55e]"
+              className="text-2xl font-serif tracking-[0.15em] uppercase font-bold hover:text-[#FC563C]"
             >
               {item}
             </a>
@@ -120,14 +123,14 @@ export default function Home() {
                 <img src={selectedImage} alt="Main" className="w-full h-full object-cover transition-all duration-500" />
               </div>
               <div className="flex flex-col gap-8">
-                {/* MATCHED TYPOGRAPHY: THE GALLERY */}
                 <h2 className="text-[12px] font-black tracking-[0.4em] uppercase text-[#222222]">The Gallery</h2>
                 <div className="grid grid-cols-3 gap-3">
                   {galleryImages.map((num) => (
                     <div 
                       key={num} 
                       onClick={() => setSelectedImage(`/images/${num}.jpg`)} 
-                      className={`aspect-square cursor-pointer overflow-hidden transition-all duration-300 border-2 ${selectedImage === `/images/${num}.jpg` ? 'border-[#22c55e]' : 'border-transparent opacity-60'}`}
+                      className={`aspect-square cursor-pointer overflow-hidden transition-all duration-300 border-2 ${selectedImage === `/images/${num}.jpg` ? 'border-[#FC563C]' : 'border-transparent opacity-60'}`}
+                      style={{ borderColor: selectedImage === `/images/${num}.jpg` ? '#FC563C' : 'transparent' }}
                     >
                       <img src={`/images/${num}.jpg`} className="w-full h-full object-cover" />
                     </div>
@@ -181,9 +184,8 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            {/* RESTORED ORIGINAL MAP SOURCE */}
             <div className="mt-20 h-[400px] md:h-[450px] bg-white border border-black/5 p-2 shadow-sm">
-              <iframe src="https://www.google.com/maps?q=68/D/1/1,+Kawdana+RD,+Dehiwala&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
+               <iframe src="https://www.google.com/maps?q=68/D/1/1,+Kawdana+RD,+Dehiwala&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
             </div>
           </div>
         </section>
