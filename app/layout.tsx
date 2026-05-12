@@ -14,9 +14,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Rian Rest | Comfortable Apartment Stay in Dehiwala",
-  description: "Experience a clean and cozy SLTDA approved stay at Rian Rest Apartment in Dehiwala. Perfect for families and solo travelers seeking comfort and convenience.",
-  keywords: ["Rian Rest", "Apartment in Dehiwala", "Rian Rest Dehiwala", "Sri Lanka Accommodation"],
+  title: "Rian Rest | Comfortable Stay",
+  description: "A clean, cozy apartment in Dehiwala",
 };
 
 export default function RootLayout({
