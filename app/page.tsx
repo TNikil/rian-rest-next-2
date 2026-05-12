@@ -83,14 +83,14 @@ export default function Home() {
       )}
 
       <main id="top">
-        {/* Hero Section */}
+        {/* Hero Section - UPDATED: No italics on "heart" and modern sans-serif description */}
         <section className="max-w-[1100px] mx-auto px-5 pt-12 md:pt-24 pb-24 md:pb-28 grid md:grid-cols-[1.2fr_0.8fr] gap-12 md:gap-16 items-center">
           <div>
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#666666] mb-4 block">Private Apartment • Dehiwala</span>
             <h1 className="text-5xl md:text-7xl font-serif leading-[1.1] mb-8 uppercase tracking-tight">
-              A refined stay <br/>in the <span className="italic">heart</span> of city.
+              A refined stay <br/>in the heart of city.
             </h1>
-            <p className="text-[#444444] text-xl md:text-2xl leading-relaxed mb-12 max-w-md font-medium">
+            <p className="text-[#444444] text-lg md:text-xl leading-relaxed mb-12 max-w-md font-sans font-normal tracking-wide">
               An SLTDA approved sanctuary designed for those who seek tranquility, comfort, and effortless convenience.
             </p>
           </div>
@@ -198,7 +198,7 @@ export default function Home() {
           68/D/1/1, Kawdana RD, Dehiwala, Sri Lanka
         </address>
         <p className="text-[11px] text-black/50 tracking-[0.1em] uppercase font-bold mb-6">
-          +94 76 477 9861 &nbsp;•&nbsp; +974 5080 7686
+          +94 76 477 9861  •  +974 5080 7686
         </p>
         <p className="text-[10px] text-black/30 tracking-[0.2em] uppercase font-bold">© {new Date().getFullYear()} — Built by Creovx</p>
       </footer>
