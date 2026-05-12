@@ -24,10 +24,13 @@ export default function Home() {
   const galleryImages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   return (
-    <div className="min-h-screen text-[#222222] selection:bg-black selection:text-white font-sans bg-[#F0F4F7]">
+    <div className="min-h-screen text-[#222222] selection:bg-black selection:text-white font-sans bg-[#F0F4F7] overflow-x-hidden">
       
       {/* Header */}
-      <header className="sticky top-0 z-[60] backdrop-blur-md bg-[#F0F4F7]/90 border-b border-black/5">
+      <header 
+        className="sticky top-0 z-[60] backdrop-blur-md bg-[#F0F4F7]/90 border-b-[#7eb0d2] border-b md:border-b-black/5"
+        style={{ boxSizing: 'border-box' }}
+      >
         <div className="max-w-[1100px] mx-auto px-5 py-6 flex items-center justify-between">
           <a href="#top" className="transition-transform hover:opacity-70">
              <img src="/logo.png" alt="Rian Rest Logo" className="h-10 md:h-12 w-auto object-contain" />
@@ -81,7 +84,7 @@ export default function Home() {
 
       <main id="top">
         {/* Hero Section */}
-        <section className="max-w-[1100px] mx-auto px-5 pt-20 md:pt-24 pb-24 md:pb-28 grid md:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
+        <section className="max-w-[1100px] mx-auto px-5 pt-12 md:pt-24 pb-24 md:pb-28 grid md:grid-cols-[1.2fr_0.8fr] gap-12 md:gap-16 items-center">
           <div>
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#666666] mb-4 block">Private Apartment • Dehiwala</span>
             <h1 className="text-5xl md:text-7xl font-serif leading-[1.1] mb-8 uppercase tracking-tight">
@@ -91,7 +94,7 @@ export default function Home() {
               An SLTDA approved sanctuary designed for those who seek tranquility, comfort, and effortless convenience.
             </p>
           </div>
-          <div className="aspect-[4/5] bg-white/40 relative overflow-hidden shadow-sm hidden md:block">
+          <div className="aspect-[4/5] bg-white/40 relative overflow-hidden shadow-sm w-full block">
             <img src="/images/hero.jpg" alt="Interior" className="w-full h-full object-cover" />
           </div>
         </section>
@@ -117,7 +120,6 @@ export default function Home() {
         {/* Gallery Section */}
         <section id="photos" className="py-20 md:py-32 bg-[#F0F4F7]">
           <div className="max-w-[1100px] mx-auto px-5">
-            {/* PC: Vertical Filmstrip */}
             <div className="hidden md:grid md:grid-cols-[1fr_350px] gap-12 items-start">
               <div className="aspect-[16/10] bg-white p-3 shadow-2xl overflow-hidden">
                 <img src={selectedImage} alt="Main" className="w-full h-full object-cover transition-all duration-500" />
@@ -138,7 +140,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            {/* Mobile: 2-Col Grid */}
             <div className="md:hidden">
               <h2 className="text-[12px] font-black tracking-[0.4em] uppercase text-[#222222] mb-6">The Gallery</h2>
               <div className="grid grid-cols-2 gap-3">
@@ -172,9 +173,9 @@ export default function Home() {
               {[
                 { name: "KFC / BK / Pizza Hut", dist: "1.1 km", time: "5 MIN" },
                 { name: "Cargills / Keells", dist: "500 m", time: "2 MIN" },
-                { name: "Mount Lavinia Beach", dist: "3.2 km", time: "15 MIN" },
-                { name: "Nearest Hospital", dist: "2.8 km", time: "12 MIN" },
-                { name: "CMB Airport", dist: "42 km", time: "55 MIN" },
+                { name: "Beach", dist: "3.2 km", time: "15 MIN" },
+                { name: "Hospital", dist: "2.8 km", time: "12 MIN" },
+                { name: "Airport", dist: "42 km", time: "55 MIN" },
                 { name: "Makumbura Multimodal Centre", dist: "16 km", time: "30 MIN" },
               ].map((place, i) => (
                 <div key={i} className="border-l-2 border-black/20 pl-6 md:pl-8">
@@ -191,8 +192,14 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="py-20 text-center border-t border-black/10">
+      <footer className="py-20 text-center border-t border-black/10 px-5">
         <p className="text-[12px] font-black tracking-[0.5em] uppercase text-black/40 mb-4">Rian Rest Apartment</p>
+        <address className="not-italic text-[11px] text-black/50 tracking-[0.1em] uppercase font-bold mb-2">
+          68/D/1/1, Kawdana RD, Dehiwala, Sri Lanka
+        </address>
+        <p className="text-[11px] text-black/50 tracking-[0.1em] uppercase font-bold mb-6">
+          +94 76 477 9861 &nbsp;•&nbsp; +974 5080 7686
+        </p>
         <p className="text-[10px] text-black/30 tracking-[0.2em] uppercase font-bold">© {new Date().getFullYear()} — Built by Creovx</p>
       </footer>
     </div>
