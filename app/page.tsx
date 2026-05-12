@@ -14,7 +14,7 @@ export default function Home() {
   ];
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string>("/images/1.jpg");
   const [waLink, setWaLink] = useState("");
 
   useEffect(() => {
@@ -28,101 +28,75 @@ export default function Home() {
   return (
     <div className="min-h-screen text-[#222222] selection:bg-black selection:text-white font-sans bg-[#F0F4F7]">
       
-      {/* Header - Fixed to match main bg */}
+      {/* Header - Increased Nav Link Size */}
       <header className="sticky top-0 z-[60] backdrop-blur-md bg-[#F0F4F7]/90 border-b border-black/5">
-        <div className="max-w-[1100px] mx-auto px-5 py-5 flex items-center justify-between">
-          
+        <div className="max-w-[1100px] mx-auto px-5 py-6 flex items-center justify-between">
           <a href="#top" className="transition-transform hover:opacity-70">
              <img 
                src="/logo.png" 
                alt="Rian Rest Logo" 
-               className="h-8 md:h-10 w-auto object-contain" 
+               className="h-10 md:h-12 w-auto object-contain" 
              />
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-10">
             {['About', 'Photos', 'Amenities', 'Location'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`} 
-                className="text-[10px] font-bold tracking-[0.25em] uppercase hover:text-[#22c55e] transition-colors"
+                className="text-[13px] font-extrabold tracking-[0.2em] uppercase hover:text-[#22c55e] transition-colors"
               >
                 {item}
               </a>
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <a 
               href={waLink} 
               target="_blank" 
-              className="bg-[#22c55e] text-white px-6 py-2.5 text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-black transition-all shadow-sm"
+              className="bg-[#22c55e] text-white px-8 py-3 text-[12px] font-bold tracking-[0.15em] uppercase hover:bg-black transition-all shadow-sm"
             >
               BOOK NOW
             </a>
-            <button 
-              onClick={() => setIsMenuOpen(true)} 
-              className="md:hidden text-black text-2xl"
-            >
-              ☰
-            </button>
+            {/* Hamburger Menu - Made slightly larger */}
+            <button onClick={() => setIsMenuOpen(true)} className="md:hidden text-black text-4xl">☰</button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu - Increased Font Sizes as per screenshot */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-[#F0F4F7] flex flex-col items-center justify-center gap-12 md:hidden">
-          <button 
-            onClick={() => setIsMenuOpen(false)} 
-            className="absolute top-7 right-5 text-black text-3xl p-2"
-          >
-            ✕
-          </button>
-
-          <img src="/logo.png" alt="Logo" className="h-10 w-auto mb-4" />
-
+        <div className="fixed inset-0 z-[100] bg-[#F0F4F7] flex flex-col items-center justify-center gap-14 md:hidden">
+          <button onClick={() => setIsMenuOpen(false)} className="absolute top-8 right-6 text-black text-4xl p-2">✕</button>
+          <img src="/logo.png" alt="Logo" className="h-12 w-auto mb-6" />
           {['About', 'Photos', 'Amenities', 'Location'].map((item) => (
             <a 
               key={item} 
               href={`#${item.toLowerCase()}`} 
               onClick={() => setIsMenuOpen(false)}
-              className="text-3xl font-serif tracking-[0.3em] uppercase font-bold hover:text-[#22c55e] transition-colors"
+              className="text-4xl font-serif tracking-[0.2em] uppercase font-black hover:text-[#22c55e] transition-colors"
             >
               {item}
             </a>
           ))}
-          
-          <a 
-            href={waLink} 
-            onClick={() => setIsMenuOpen(false)}
-            className="mt-4 border-b border-black pb-1 text-[10px] font-bold tracking-[0.2em] uppercase"
-          >
-            Contact via WhatsApp
-          </a>
         </div>
       )}
 
       <main id="top">
-        {/* Hero Section - Base Color */}
-        <section className="max-w-[1100px] mx-auto px-5 pt-20 pb-24 grid md:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
+        {/* Hero Section */}
+        <section className="max-w-[1100px] mx-auto px-5 pt-24 pb-28 grid md:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
           <div>
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#666666] mb-4 block">
-              Private Apartment • Dehiwala
-            </span>
+            <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#666666] mb-4 block">Private Apartment • Dehiwala</span>
             <h1 className="text-5xl md:text-7xl font-serif leading-[1.1] mb-8 uppercase tracking-tight">
               A refined stay <br/>in the <span className="italic">heart</span> of city.
             </h1>
-            <p className="text-[#444444] text-lg md:text-xl leading-relaxed mb-12 max-w-md font-medium">
+            <p className="text-[#444444] text-xl md:text-2xl leading-relaxed mb-12 max-w-md font-medium">
               An SLTDA approved sanctuary designed for those who seek tranquility, comfort, and effortless convenience.
             </p>
-            <div className="flex gap-8">
-              <a href="#photos" className="border-b border-black pb-1 text-[10px] font-bold tracking-[0.2em] uppercase hover:text-[#22c55e] hover:border-[#22c55e] transition-all">
-                View Gallery
-              </a>
-              <a href="#location" className="border-b border-black pb-1 text-[10px] font-bold tracking-[0.2em] uppercase hover:text-[#22c55e] hover:border-[#22c55e] transition-all">
-                Explore Location
-              </a>
+            <div className="flex gap-10">
+              <a href="#photos" className="border-b-2 border-black pb-1 text-[11px] font-bold tracking-[0.2em] uppercase hover:text-[#22c55e] hover:border-[#22c55e] transition-all">View Gallery</a>
+              <a href="#location" className="border-b-2 border-black pb-1 text-[11px] font-bold tracking-[0.2em] uppercase hover:text-[#22c55e] hover:border-[#22c55e] transition-all">Explore Location</a>
             </div>
           </div>
           <div className="aspect-[4/5] bg-white/40 relative overflow-hidden shadow-sm">
@@ -130,92 +104,104 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Section - Variation: Brighter Whitish Blue (#F8FAFC) */}
-        <section id="about" className="bg-[#F8FAFC] py-24 border-y border-black/5">
+        {/* About Section - Increased Headings as per screenshot */}
+        <section id="about" className="bg-[#F8FAFC] py-28 border-y border-black/5">
           <div className="max-w-[1100px] mx-auto px-5">
             <div className="grid md:grid-cols-3 gap-16">
-              <div className="space-y-4">
-                <h3 className="text-[11px] font-bold tracking-[0.3em] uppercase">Clean & Cozy</h3>
-                <p className="text-[#333333] text-sm leading-relaxed">A meticulously maintained private space designed for absolute relaxation and peace of mind.</p>
+              <div className="space-y-5">
+                <h3 className="text-[14px] font-black tracking-[0.25em] uppercase">Clean & Cozy</h3>
+                <p className="text-[#333333] text-base leading-relaxed">A meticulously maintained private space designed for absolute relaxation.</p>
               </div>
-              <div className="space-y-4">
-                <h3 className="text-[11px] font-bold tracking-[0.3em] uppercase">Prime Location</h3>
-                <p className="text-[#333333] text-sm leading-relaxed">Nestled in Dehiwala, minutes away from premium dining and essential travel hubs.</p>
+              <div className="space-y-5">
+                <h3 className="text-[14px] font-black tracking-[0.25em] uppercase">Prime Location</h3>
+                <p className="text-[#333333] text-base leading-relaxed">Nestled in Dehiwala, minutes away from premium dining and travel hubs.</p>
               </div>
-              <div className="space-y-4">
-                <h3 className="text-[11px] font-bold tracking-[0.3em] uppercase">Direct Support</h3>
-                <p className="text-[#333333] text-sm leading-relaxed">Seamless communication via WhatsApp for personalized booking and instant assistance.</p>
+              <div className="space-y-5">
+                <h3 className="text-[14px] font-black tracking-[0.25em] uppercase">Direct Support</h3>
+                <p className="text-[#333333] text-base leading-relaxed">Seamless communication via WhatsApp for personalized booking.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Photo Gallery - Base Color */}
-        <section id="photos" className="py-24 max-w-[1100px] mx-auto px-5 text-center">
-          <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase mb-16">The Gallery</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {galleryImages.map((num) => (
-              <div 
-                key={num} 
-                onClick={() => setSelectedImage(`/images/${num}.jpg`)} 
-                className="aspect-square bg-white/40 cursor-pointer hover:opacity-80 transition-opacity overflow-hidden"
-              >
-                <img src={`/images/${num}.jpg`} className="w-full h-full object-cover" alt="Gallery" />
+        {/* Gallery Design 2 (Filmstrip) */}
+        <section id="photos" className="py-24 max-w-[1100px] mx-auto px-5">
+          <div className="grid md:grid-cols-[1fr_320px] gap-12 items-center">
+            <div className="aspect-[3/4] md:aspect-[16/10] bg-white p-3 shadow-xl overflow-hidden group">
+              <img 
+                src={selectedImage} 
+                alt="Main Gallery Focus" 
+                className="w-full h-full object-cover transition-all duration-500"
+              />
+            </div>
+
+            <div className="flex flex-col gap-10">
+              <div className="text-left">
+                <h2 className="text-[12px] font-bold tracking-[0.4em] uppercase mb-4 text-black/40">The Gallery</h2>
+                <p className="text-4xl font-serif italic mb-4 leading-tight">Attention to <br/>every detail.</p>
+                <p className="text-[10px] text-black/40 tracking-widest uppercase font-bold">Select a view to expand</p>
               </div>
-            ))}
+
+              <div className="flex flex-row md:grid md:grid-cols-3 overflow-x-auto pb-4 gap-3 no-scrollbar scroll-smooth">
+                {galleryImages.map((num) => (
+                  <div 
+                    key={num} 
+                    onClick={() => setSelectedImage(`/images/${num}.jpg`)} 
+                    className={`flex-none w-24 h-24 md:w-auto md:aspect-square cursor-pointer overflow-hidden transition-all duration-300 border-2 ${
+                        selectedImage === `/images/${num}.jpg` ? 'border-[#22c55e] scale-95 shadow-inner' : 'border-transparent opacity-60 hover:opacity-100'
+                    }`}
+                  >
+                    <img src={`/images/${num}.jpg`} className="w-full h-full object-cover" alt={`Thumb ${num}`}/>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Amenities - Base Color */}
+        {/* Amenities */}
         <section id="amenities" className="py-24 border-t border-black/10 max-w-[1100px] mx-auto px-5 text-center">
-          <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase mb-12">Curated Amenities</h2>
-          <div className="flex flex-wrap justify-center gap-4">
+          <h2 className="text-[12px] font-black tracking-[0.4em] uppercase mb-12">Curated Amenities</h2>
+          <div className="flex flex-wrap justify-center gap-6">
             {amenities.map((item) => (
-              <div key={item} className="px-6 py-3 border border-black/10 text-[10px] font-bold tracking-[0.2em] uppercase text-[#333333]">
+              <div key={item} className="px-8 py-4 border border-black/10 text-[11px] font-black tracking-[0.2em] uppercase text-[#333333]">
                 {item}
               </div>
             ))}
           </div>
         </section>
 
-        {/* Location - Variation: Brighter Whitish Blue (#F8FAFC) */}
+        {/* Location Section */}
         <section id="location" className="py-24 bg-[#F8FAFC] border-t border-black/5">
           <div className="max-w-[1100px] mx-auto px-5">
-            <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase mb-20 text-center">Proximity Guide</h2>
+            <h2 className="text-[12px] font-black tracking-[0.4em] uppercase mb-20 text-center">Proximity Guide</h2>
             <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-y-16 gap-x-12">
               {[
                 { name: "KFC / Burger King", dist: "1.1 km", time: "5 MIN" },
                 { name: "Cargills / Keells", dist: "500 m", time: "2 MIN" },
-                { name: "Mount Lavinia Beach", dist: "3.2 km", time: "15 MIN" },
-                { name: "Kalubowila Hospital", dist: "2.8 km", time: "12 MIN" },
-                { name: "Airport (BIA)", dist: "42 km", time: "55 MIN" },
+                { name: "Beach", dist: "3.2 km", time: "15 MIN" },
+                { name: "Hospital", dist: "2.8 km", time: "12 MIN" },
+                { name: "Airport", dist: "42 km", time: "55 MIN" },
               ].map((place, i) => (
-                <div key={i} className="border-l border-black/20 pl-8">
-                  <p className="text-[9px] font-bold text-black/40 tracking-[0.2em] mb-3">{place.time}</p>
-                  <p className="text-[12px] font-bold tracking-[0.1em] uppercase mb-1">{place.name}</p>
-                  <p className="text-[11px] text-black/50 uppercase">{place.dist}</p>
+                <div key={i} className="border-l-2 border-black/20 pl-8">
+                  <p className="text-[10px] font-black text-black/40 tracking-[0.2em] mb-3">{place.time}</p>
+                  <p className="text-[14px] font-black tracking-[0.1em] uppercase mb-1">{place.name}</p>
+                  <p className="text-[12px] text-black/50 uppercase">{place.dist}</p>
                 </div>
               ))}
             </div>
-            <div className="mt-20 h-[400px] bg-white border border-black/5 p-2 shadow-sm">
+            <div className="mt-20 h-[450px] bg-white border border-black/5 p-2 shadow-sm">
                <iframe src="https://www.google.com/maps?q=68/D/1/1,+Kawdana+RD,+Dehiwala&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
             </div>
           </div>
         </section>
       </main>
 
-      {/* Footer - Base Color */}
+      {/* Footer */}
       <footer className="py-20 text-center border-t border-black/10">
-        <p className="text-[10px] font-bold tracking-[0.5em] uppercase text-black/40 mb-4">Rian Rest Apartment</p>
-        <p className="text-[9px] text-black/30 tracking-[0.2em] uppercase">© {new Date().getFullYear()} — Built by Creovx</p>
+        <p className="text-[12px] font-black tracking-[0.5em] uppercase text-black/40 mb-4">Rian Rest Apartment</p>
+        <p className="text-[10px] text-black/30 tracking-[0.2em] uppercase font-bold">© {new Date().getFullYear()} — Built by Creovx</p>
       </footer>
-
-      {/* Lightbox */}
-      {selectedImage && (
-        <div className="fixed inset-0 bg-[#F0F4F7]/98 z-[100] flex items-center justify-center p-8" onClick={() => setSelectedImage(null)}>
-          <img src={selectedImage} className="max-w-full max-h-[85vh] shadow-2xl" alt="Preview" />
-        </div>
-      )}
     </div>
   );
 }
