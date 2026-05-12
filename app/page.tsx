@@ -33,7 +33,11 @@ export default function Home() {
         <div className="max-w-[1100px] mx-auto px-5 py-5 flex items-center justify-between">
           
           <a href="#top" className="transition-transform hover:opacity-70">
-             <span className="font-serif text-xl tracking-[0.2em] uppercase font-bold">Rian Rest</span>
+             <img 
+               src="/logo.png" 
+               alt="Rian Rest Logo" 
+               className="h-8 md:h-10 w-auto object-contain" 
+             />
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -56,7 +60,6 @@ export default function Home() {
             >
               BOOK NOW
             </a>
-            {/* Hamburger Button */}
             <button 
               onClick={() => setIsMenuOpen(true)} 
               className="md:hidden text-black text-2xl"
@@ -70,13 +73,14 @@ export default function Home() {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center gap-12 md:hidden">
-          {/* Close Button Inside Overlay */}
           <button 
             onClick={() => setIsMenuOpen(false)} 
             className="absolute top-7 right-5 text-black text-3xl p-2"
           >
             ✕
           </button>
+
+          <img src="/logo.png" alt="Logo" className="h-10 w-auto mb-4" />
 
           {['About', 'Photos', 'Amenities', 'Location'].map((item) => (
             <a 
@@ -174,15 +178,16 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Location */}
+        {/* Location - Updated Guide */}
         <section id="location" className="py-24 bg-[#f9f9f9]">
           <div className="max-w-[1100px] mx-auto px-5">
             <h2 className="text-[11px] font-bold tracking-[0.4em] uppercase mb-20 text-center">Proximity Guide</h2>
-            <div className="grid md:grid-cols-4 gap-y-16 gap-x-12">
+            <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-y-16 gap-x-12">
               {[
                 { name: "KFC / Burger King", dist: "1.1 km", time: "5 MIN" },
                 { name: "Cargills / Keells", dist: "500 m", time: "2 MIN" },
-                { name: "Dehiwala Beach", dist: "3.0 km", time: "15 MIN" },
+                { name: "Mount Lavinia Beach", dist: "3.2 km", time: "15 MIN" },
+                { name: "Kalubowila Hospital", dist: "2.8 km", time: "12 MIN" },
                 { name: "Airport (BIA)", dist: "42 km", time: "55 MIN" },
               ].map((place, i) => (
                 <div key={i} className="border-l border-[#dddddd] pl-8">
