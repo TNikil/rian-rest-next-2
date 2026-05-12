@@ -32,12 +32,12 @@ export default function Home() {
         className="sticky top-0 z-[60] backdrop-blur-md bg-[#F0F4F7]/90 border-b-[#7eb0d2] border-b md:border-b-black/5"
         style={{ boxSizing: 'border-box' }}
       >
-        <div className="max-w-[1100px] mx-auto px-5 py-6 flex items-center justify-between">
-          {/* Logo Section with House Icon and Separator */}
-          <a href="#top" className="flex items-center gap-3 transition-transform hover:opacity-70">
-             <HouseIcon size={24} className="text-[#2D3648]" strokeWidth={2} />
+        <div className="max-w-[1100px] mx-auto px-4 md:px-5 py-4 md:py-6 flex items-center justify-between">
+          {/* Adjusted Logo Section for Mobile */}
+          <a href="#top" className="flex items-center gap-2 md:gap-3 transition-transform hover:opacity-70 flex-shrink-0">
+             <HouseIcon size={28} className="text-[#2D3648]" strokeWidth={2} />
              <div className="w-[1.5px] h-6 bg-black/10"></div>
-             <img src="/logo.png" alt="Rian Rest Logo" className="h-10 md:h-12 w-auto object-contain" />
+             <img src="/logo.png" alt="Rian Rest Logo" className="h-8 md:h-12 w-auto object-contain" />
           </a>
 
           <nav className="hidden md:flex items-center gap-10">
@@ -52,18 +52,18 @@ export default function Home() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 md:gap-4">
             <a 
               href={waLink} 
               target="_blank" 
-              className="text-white px-6 md:px-8 py-3 text-[11px] md:text-[12px] font-bold tracking-[0.15em] uppercase transition-all shadow-sm"
+              className="text-white px-4 md:px-8 py-2.5 md:py-3 text-[10px] md:text-[12px] font-bold tracking-[0.1em] md:tracking-[0.15em] uppercase transition-all shadow-sm whitespace-nowrap"
               style={{ backgroundColor: '#2D3648' }}
               onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#7EB0D2')}
               onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#2D3648')}
             >
               BOOK NOW
             </a>
-            <button onClick={() => setIsMenuOpen(true)} className="md:hidden text-black text-3xl">☰</button>
+            <button onClick={() => setIsMenuOpen(true)} className="md:hidden text-black text-2xl p-1">☰</button>
           </div>
         </div>
       </header>
@@ -192,7 +192,7 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-20 h-[400px] md:h-[450px] bg-white border border-black/5 p-2 shadow-sm">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15844.2!2d79.8!3d6.8!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDgnMTEuNSJOIDc5wrA1MycyOC4yIkU!5e0!3m2!1sen!2slk!4v1" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15846.10700588636!2d79.8661146!3d6.8273617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b291410403d%3A0xc3f9829f074d6c4e!2sDehiwala-Mount%20Lavinia!5e0!3m2!1sen!2slk!4v1715530000000!5m2!1sen!2slk" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
             </div>
           </div>
         </section>
