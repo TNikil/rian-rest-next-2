@@ -44,7 +44,16 @@ export default function Home() {
             />
           </a>
 
+          {/* MOBILE MENU OVERLAY - This handles the "Click Outside" logic */}
+          {isMenuOpen && (
+            <div 
+              className="fixed inset-0 bg-black/40 md:hidden z-[40]" 
+              onClick={() => setIsMenuOpen(false)}
+            />
+          )}
+
           <nav
+            onClick={(e) => e.stopPropagation()} // Prevents menu from closing when clicking inside it
             className={`
               ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'} 
               md:translate-y-0 md:opacity-100 md:pointer-events-auto
@@ -66,7 +75,7 @@ export default function Home() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 relative z-[60]">
             <a
               href={waLink}
               target="_blank"
@@ -92,7 +101,6 @@ export default function Home() {
 
       <main id="top" className="max-w-[1100px] mx-auto px-5 relative">
 
-        {/* Deep Green gradient in the hero background area */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#22c55e] opacity-10 blur-[120px] rounded-full pointer-events-none z-0"></div>
 
         {/* Hero Section */}
@@ -106,8 +114,8 @@ export default function Home() {
               Comfortable stay at <br /><span className="text-[#22c55e] drop-shadow-sm">Rian Rest</span>
             </h1>
 
-            <p className="text-white/70 leading-relaxed text-base md:text-xl max-w-md font-bold">
-              A clean, cozy apartment for families and solo travelers. SLTDA Approved sanctuary.
+            <p className="text-white/70 text-justify leading-[1.8] text-base md:text-xl max-w-md font-bold tracking-wide">
+              A clean, cozy apartment for families and solo travelers. SLTDA Approved sanctuary designed for a peaceful stay.
             </p>
 
             <div className="flex gap-3 mt-8">
@@ -150,10 +158,12 @@ export default function Home() {
         {/* About Section */}
         <section id="about" className="py-12 border-t border-white/10">
           <h2 className="text-3xl font-black mb-6 text-white tracking-widest uppercase">About Rian Rest</h2>
-          <p className="text-white font-bold leading-relaxed mb-8 text-lg md:text-xl">
+          
+          <p className="text-white font-bold text-justify leading-[1.8] mb-8 text-lg md:text-xl tracking-wide">
             Rian Rest is a private apartment stay designed for comfort and convenience.
             Close to key locations, ideal for relaxing after travel or work. (SLTDA Approved)
           </p>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-6 border border-white/10 bg-white/5 rounded-[2px]">
               <h3 className="text-lg font-bold mb-2 text-white tracking-widest uppercase">Clean & Cozy</h3>
