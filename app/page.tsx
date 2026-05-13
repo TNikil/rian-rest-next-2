@@ -186,7 +186,7 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-20 h-[400px] md:h-[450px] bg-white border border-black/5 p-2 shadow-sm">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15846.10700588636!2d79.8661146!3d6.8273617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b291410403d%3A0xc3f9829f074d6c4e!2sDehiwala-Mount%20Lavinia!5e0!3m2!1sen!2slk!4v1715530000000!5m2!1sen!2slk" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15844.2!2d79.8!3d6.8!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDgnMTEuNSJOIDc5wrA1MycyOC4yIkU!5e0!3m2!1sen!2slk!4v1" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
             </div>
           </div>
         </section>
