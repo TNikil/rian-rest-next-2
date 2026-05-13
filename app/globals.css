@@ -1,4 +1,4 @@
-/* LINE 1: All imports must be here */
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 @import "tailwindcss";
 
@@ -9,12 +9,11 @@
   --accent: #22c55e;
   --border: #eeeeee;
   --font-raleway: 'Raleway', sans-serif;
-  /* REMOVED: --font-mories: 'Mories', serif;  <- This was blocking the actual font file */
+  
 }
 
 @layer utilities {
   .font-mories {
-    /* Use the variable injected by Next.js in your layout.tsx */
     font-family: var(--font-mories), serif;
     letter-spacing: 0.05em;
     text-transform: uppercase;
