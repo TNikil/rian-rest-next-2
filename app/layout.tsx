@@ -1,5 +1,7 @@
+// app/layout.tsx
 import type { Metadata } from "next";
-import { Geist, Playfair_Display, Raleway } from "next/font/google"; // Added Raleway
+import { Geist, Playfair_Display, Raleway } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,11 +15,15 @@ const playfair = Playfair_Display({
   weight: ["400", "700", "900"],
 });
 
-// Added Raleway configuration
 const railway = Raleway({
   variable: "--font-railway",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const mories = localFont({
+  src: "../public/fonts/Mories.otf",
+  variable: "--font-mories",
 });
 
 export const metadata: Metadata = {
@@ -27,14 +33,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html
       lang="en"
-      // Added railway.variable here
-      className={`${geistSans.variable} ${playfair.variable} ${railway.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${playfair.variable} ${railway.variable} ${mories.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
