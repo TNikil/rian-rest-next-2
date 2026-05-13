@@ -33,7 +33,6 @@ export default function Home() {
         style={{ boxSizing: 'border-box' }}
       >
         <div className="max-w-[1100px] mx-auto px-4 md:px-5 py-4 md:py-6 flex items-center justify-between">
-          {/* Adjusted Logo Section for Mobile */}
           <a href="#top" className="flex items-center gap-2 md:gap-3 transition-transform hover:opacity-70 flex-shrink-0">
              <HouseIcon size={28} className="text-[#2D3648]" strokeWidth={2} />
              <div className="w-[1.5px] h-6 bg-black/10"></div>
@@ -87,11 +86,10 @@ export default function Home() {
       )}
 
       <main id="top">
-        {/* Hero Section */}
         <section className="max-w-[1100px] mx-auto px-5 pt-12 md:pt-24 pb-24 md:pb-28 grid md:grid-cols-[1.2fr_0.8fr] gap-12 md:gap-16 items-center">
           <div>
             <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#666666] mb-4 block">Private Apartment • Dehiwala</span>
-            <h1 className="text-5xl md:text-7xl font-playfair leading-[1.1] mb-8 uppercase tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-mories leading-[1.1] mb-8 uppercase tracking-tight">
               A refined stay <br/>in the heart of city.
             </h1>
             <p className="text-[#444444] text-lg md:text-xl leading-relaxed mb-12 max-w-md font-railway text-justify [hyphens:auto]">
@@ -103,7 +101,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Section */}
         <section id="about" className="bg-[#F8FAFC] py-24 md:py-28 border-y border-black/5">
           <div className="max-w-[1100px] mx-auto px-5">
             <div className="grid md:grid-cols-3 gap-16">
@@ -123,7 +120,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Gallery Section */}
         <section id="photos" className="py-20 md:py-32 bg-[#F0F4F7]">
           <div className="max-w-[1100px] mx-auto px-5">
             <div className="hidden md:grid md:grid-cols-[1fr_350px] gap-12 items-start">
@@ -159,7 +155,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Amenities */}
         <section id="amenities" className="py-24 border-t border-black/10 max-w-[1100px] mx-auto px-5 text-center">
           <h2 className="text-[12px] font-black tracking-[0.4em] uppercase mb-12">Curated Amenities</h2>
           <div className="flex flex-wrap justify-center gap-6">
@@ -171,7 +166,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Location Section */}
         <section id="location" className="py-24 bg-[#F8FAFC] border-t border-black/5">
           <div className="max-w-[1100px] mx-auto px-5">
             <h2 className="text-[12px] font-black tracking-[0.4em] uppercase mb-20 text-center">Proximity Guide</h2>
@@ -192,7 +186,7 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-20 h-[400px] md:h-[450px] bg-white border border-black/5 p-2 shadow-sm">
-                <iframe src="https://www.google.com/maps?q=68/D/1/1,+Kawdana+RD,+Dehiwala&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15846.10700588636!2d79.8661146!3d6.8273617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b291410403d%3A0xc3f9829f074d6c4e!2sDehiwala-Mount%20Lavinia!5e0!3m2!1sen!2slk!4v1715530000000!5m2!1sen!2slk" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
             </div>
           </div>
         </section>
