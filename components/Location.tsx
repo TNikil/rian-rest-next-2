@@ -34,7 +34,7 @@ const Location = () => {
           ))}
         </div>
         <div className="mt-20 h-[400px] md:h-[450px] bg-white border border-black/5 p-2 shadow-sm">
-         <iframe src="https://www.google.com/maps?q=68/D/1/1,+Kawdana+RD,+Dehiwala&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy"></iframe>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495.1701091729271!2d79.8702773!3d6.8472709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b57ac4b91c7%3A0xb9ed3cc80f5eea32!2s4S6MIR!5e0!3m2!1sen!2slk!4v1779418595661!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
