@@ -37,7 +37,7 @@ export default function Home() {
               className="flex items-center transition-opacity hover:opacity-70 flex-shrink-0"
             >
               <LogoSmall className="w-auto h-24 md:h-24" />
-              <div className="w-[3px] h-6 md:h-7 bg-[#bf9950] mx-3 md:mx-4" />
+              <div className="w-[2px] h-6 md:h-7 bg-[#bf9950] mx-3 md:mx-4" />
               <LogoName className="w-auto h-10 md:h-12" />
             </a>
 
