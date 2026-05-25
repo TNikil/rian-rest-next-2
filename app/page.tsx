@@ -8,9 +8,9 @@ import Photos from '../components/Photos';
 import Amenities from '../components/Amenities';
 import Location from '../components/Location';
 import { motion } from 'framer-motion';
-import LogoIcon from '@/components/icons/LogoIcon';
 import Logo from '@/components/icons/Logo';
-import LogoSmall from '@/components/icons/Logo_small';
+import LogoSmall from '@/components/icons/LogoSmall';
+import LogoName from '@/components/icons/LogoName';
 
 export default function Home() {
   const WHATSAPP_NUMBER = '+94764779861';
@@ -29,48 +29,49 @@ export default function Home() {
   return (
     <div className="min-h-screen text-[#222222] selection:bg-black selection:text-white font-sans bg-[#F0F4F7] overflow-x-hidden">
       {/* Header */}
-      <header className="sticky top-0 z-[60] backdrop-blur-md bg-[#F0F4F7]/90 border-b-[#7eb0d2] border-b md:border-b-black/5">
-        <div className="max-w-[1100px] mx-auto px-4 md:px-5 py-4 md:py-6 flex items-center justify-between">
-          <a
-            href="#top"
-            className="flex items-center gap-2 md:gap-3 transition-transform hover:opacity-70 flex-shrink-0"
-          >
-            <LogoSmall className="w-23 h-23" />
-            <div className="w-[3px] h-6 bg-[#bf9950]"></div>
-            <img
-              src="/icons/rain_rest_name.svg"
-              alt="Rian Rest Logo"
-              className="h-8 md:h-12 w-auto object-contain"
-            />
-          </a>
-
-          <nav className="hidden md:flex items-center gap-10">
-            {['About', 'Photos', 'Amenities', 'Location'].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-[13px] font-extrabold tracking-[0.2em] uppercase hover:text-[#7EB0D2] transition-colors"
-              >
-                {item}
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3 md:gap-4">
+      <header className="sticky top-0 z-[60] backdrop-blur-md bg-[#F0F4F7]/90 border-b border-[#7eb0d2] md:border-b-black/5">
+        <div className="max-w-[1100px] mx-auto px-4 md:px-6 py-4 md:py-5">
+          <div className="flex items-center justify-between">
             <a
-              href={waLink}
-              target="_blank"
-              className="text-white px-4 md:px-8 py-2.5 md:py-3 text-[10px] md:text-[12px] font-bold tracking-[0.1em] md:tracking-[0.15em] uppercase transition-all shadow-sm whitespace-nowrap"
-              style={{ backgroundColor: '#2D3648' }}
+              href="#top"
+              className="flex items-center transition-opacity hover:opacity-70 flex-shrink-0"
             >
-              BOOK NOW
+              <LogoSmall className="w-auto h-24 md:h-24" />
+              <div className="w-[3px] h-6 md:h-7 bg-[#bf9950] mx-3 md:mx-4" />
+              <LogoName className="w-auto h-10 md:h-12" />
             </a>
-            <button
-              onClick={() => setIsMenuOpen(true)}
-              className="md:hidden text-black text-2xl p-1"
-            >
-              ☰
-            </button>
+
+            {/* Navigation - Center (Desktop) */}
+            <nav className="hidden md:flex items-center gap-8 lg:gap-10">
+              {['About', 'Photos', 'Amenities', 'Location'].map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="text-xs lg:text-[13px] font-bold tracking-[0.15em] lg:tracking-[0.2em] uppercase text-gray-700 hover:text-[#7EB0D2] transition-colors duration-300"
+                >
+                  {item}
+                </a>
+              ))}
+            </nav>
+
+            {/* Action Buttons - Right */}
+            <div className="flex items-center gap-3 md:gap-4">
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#2D3648] text-white px-5 md:px-7 py-2.5 text-[11px] md:text-[12px] font-bold tracking-[0.1em] md:tracking-[0.15em] uppercase transition-all hover:bg-[#3d475f] hover:scale-105 active:scale-95 shadow-sm whitespace-nowrap"
+              >
+                BOOK NOW
+              </a>
+              <button
+                onClick={() => setIsMenuOpen(true)}
+                className="md:hidden text-gray-700 text-2xl p-1 hover:text-[#7EB0D2] transition-colors"
+                aria-label="Open menu"
+              >
+                ☰
+              </button>
+            </div>
           </div>
         </div>
       </header>
