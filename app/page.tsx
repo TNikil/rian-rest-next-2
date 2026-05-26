@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import Logo from '@/components/icons/Logo';
 import LogoSmall from '@/components/icons/LogoSmall';
 import LogoName from '@/components/icons/LogoName';
+import LogoSilver from '@/components/icons/LogoSilver';
 
 export default function Home() {
   const WHATSAPP_NUMBER = '+94764779861';
@@ -85,7 +86,7 @@ export default function Home() {
           >
             ✕
           </button>
-          <Logo className="w-23 h-23" />
+          <LogoSilver className="w-23 h-23" />
 
           {['About', 'Photos', 'Amenities', 'Location'].map((item) => (
             <a
