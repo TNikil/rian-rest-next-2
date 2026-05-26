@@ -12,6 +12,7 @@ import Logo from '@/components/icons/Logo';
 import LogoSmall from '@/components/icons/LogoSmall';
 import LogoName from '@/components/icons/LogoName';
 import LogoSilver from '@/components/icons/LogoSilver';
+import LogoSmall2 from '@/components/icons/LogoSmall2';
 
 export default function Home() {
   const WHATSAPP_NUMBER = '+94764779861';
@@ -37,7 +38,7 @@ export default function Home() {
               href="#top"
               className="flex items-center transition-opacity hover:opacity-70 flex-shrink-0"
             >
-              <LogoSmall className="w-auto h-24 md:h-24" />
+              <LogoSmall className="w-10 h-10" />
               <div className="w-[2px] h-6 md:h-7 bg-[#bf9950] mx-3 md:mx-4" />
               <LogoName className="w-auto h-10 md:h-12" />
             </a>

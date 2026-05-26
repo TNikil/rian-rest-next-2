@@ -15,20 +15,24 @@ export default function LogoSilver({ className }: LogoProps) {
       height="70"
       viewBox="0 0 18.521 18.521"
       className={className}
-      initial={{ opacity: 0, scale: 0.9 }}
+      initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
-        duration: 0.5,
+        duration: 0.8,
         ease: 'easeOut',
       }}
     >
-      {/* Background/outer shape - silver - rotates on hover */}
+      {/* Background/outer shape - silver with micro-movement */}
       <motion.g
-        animate={{}}
-        whileHover={{ rotate: 360 }}
+        animate={{
+          rotate: [0, 0.5, -0.3, 0.2, -0.1, 0],
+          y: [0, -0.3, 0.2, -0.1, 0.1, 0],
+        }}
         transition={{
-          duration: 1.5,
+          duration: 8,
+          repeat: Infinity,
           ease: 'easeInOut',
+          times: [0, 0.15, 0.3, 0.5, 0.7, 1],
         }}
         style={{ originX: '50%', originY: '50%' }}
       >
@@ -53,29 +57,43 @@ export default function LogoSilver({ className }: LogoProps) {
         />
       </motion.g>
 
-      {/* Main crest - gold (no rotation) */}
-      <motion.path
-        d="M11.057.473c-.382 1.045-1.212 1.808-2.073 2.463C8.247 3.6 7.94 4.65 8.12 5.614c-.783-.014-1.698-.057-2.225.645-.58-.647-.63-1.543-.633-2.365-.17-.677-.303-1.88-.936-2.12.458.992.434 2.1.28 3.155-.1.944.468 1.8 1.023 2.45v2.107c-1.152.262-2.24-.359-2.98-1.195-.6-.36-1.543-1.11-2.161-.838 1.05.38 1.81 1.217 2.47 2.078.64.789 1.813.965 2.67.91.029.71-.168 1.579.526 2.052.064.52-1.278.792-1.887.728-.81.096-2.128.276-2.478.961.992-.457 2.1-.431 3.156-.277.942.099 1.802-.466 2.446-1.024H9.5c.262 1.151-.359 2.238-1.194 2.98-.36.6-1.111 1.542-.839 2.161.381-1.045 1.21-1.808 2.07-2.463.738-.664 1.045-1.713.866-2.678.783.014 1.699.057 2.226-.646.58.647.628 1.543.632 2.364.17.68.306 1.877.936 2.121-.458-.991-.432-2.099-.278-3.154.1-.945-.47-1.802-1.025-2.452V9.01c1.152-.262 2.24.359 2.98 1.195.6.36 1.543 1.11 2.161.838-1.044-.38-1.807-1.21-2.462-2.07-.664-.738-1.713-1.044-2.679-.865-.034-.726.182-1.618-.525-2.105-.065-.521 1.277-.794 1.887-.73.808-.095 2.132-.274 2.478-.959-.992.457-2.1.431-3.156.277-.943-.1-1.801.467-2.446 1.024H9.024c-.262-1.151.358-2.24 1.194-2.98.336-.57 1.138-1.585.839-2.161Z"
-        style={{
-          color: '#000',
-          fill: '#d2bb89',
-          fillOpacity: 1,
-          stroke: '#bf9950',
-          strokeWidth: 0.254378,
-          strokeLinecap: 'square',
-          strokeDasharray: 'none',
-          strokeOpacity: 0.639216,
+      {/* Main crest - gold with even subtler movement */}
+      <motion.g
+        animate={{
+          rotate: [0, -0.3, 0.2, -0.1, 0.1, 0],
+          y: [0, 0.2, -0.1, 0.1, -0.05, 0],
         }}
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
         transition={{
-          duration: 2,
-          delay: 0.2,
+          duration: 9,
+          repeat: Infinity,
           ease: 'easeInOut',
+          delay: 0.3,
         }}
-      />
+        style={{ originX: '50%', originY: '50%' }}
+      >
+        <motion.path
+          d="M11.057.473c-.382 1.045-1.212 1.808-2.073 2.463C8.247 3.6 7.94 4.65 8.12 5.614c-.783-.014-1.698-.057-2.225.645-.58-.647-.63-1.543-.633-2.365-.17-.677-.303-1.88-.936-2.12.458.992.434 2.1.28 3.155-.1.944.468 1.8 1.023 2.45v2.107c-1.152.262-2.24-.359-2.98-1.195-.6-.36-1.543-1.11-2.161-.838 1.05.38 1.81 1.217 2.47 2.078.64.789 1.813.965 2.67.91.029.71-.168 1.579.526 2.052.064.52-1.278.792-1.887.728-.81.096-2.128.276-2.478.961.992-.457 2.1-.431 3.156-.277.942.099 1.802-.466 2.446-1.024H9.5c.262 1.151-.359 2.238-1.194 2.98-.36.6-1.111 1.542-.839 2.161.381-1.045 1.21-1.808 2.07-2.463.738-.664 1.045-1.713.866-2.678.783.014 1.699.057 2.226-.646.58.647.628 1.543.632 2.364.17.68.306 1.877.936 2.121-.458-.991-.432-2.099-.278-3.154.1-.945-.47-1.802-1.025-2.452V9.01c1.152-.262 2.24.359 2.98 1.195.6.36 1.543 1.11 2.161.838-1.044-.38-1.807-1.21-2.462-2.07-.664-.738-1.713-1.044-2.679-.865-.034-.726.182-1.618-.525-2.105-.065-.521 1.277-.794 1.887-.73.808-.095 2.132-.274 2.478-.959-.992.457-2.1.431-3.156.277-.943-.1-1.801.467-2.446 1.024H9.024c-.262-1.151.358-2.24 1.194-2.98.336-.57 1.138-1.585.839-2.161Z"
+          style={{
+            color: '#000',
+            fill: '#d2bb89',
+            fillOpacity: 1,
+            stroke: '#bf9950',
+            strokeWidth: 0.254378,
+            strokeLinecap: 'square',
+            strokeDasharray: 'none',
+            strokeOpacity: 0.639216,
+          }}
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: 1 }}
+          transition={{
+            duration: 2,
+            delay: 0.2,
+            ease: 'easeInOut',
+          }}
+        />
+      </motion.g>
 
-      {/* Center rectangle - blue */}
+      {/* Center rectangle - blue with subtle pulse instead of zoom */}
       <motion.rect
         width="5.702"
         height="5.62"
@@ -92,12 +110,16 @@ export default function LogoSilver({ className }: LogoProps) {
           strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{
+          scale: [0.95, 1.005, 1, 1.002, 1],
+          opacity: [0, 1, 1, 1, 1],
+        }}
         transition={{
-          duration: 0.6,
-          delay: 0.5,
-          ease: 'easeOut',
+          duration: 1.5,
+          delay: 0.3,
+          ease: [0.4, 0, 0.2, 1], // Gentle easing curve
+          times: [0, 0.3, 0.6, 0.8, 1],
         }}
       />
 
@@ -116,7 +138,7 @@ export default function LogoSilver({ className }: LogoProps) {
         animate={{ pathLength: 1, opacity: 1 }}
         transition={{
           duration: 2.5,
-          delay: 0.7,
+          delay: 0.5,
           ease: 'easeInOut',
         }}
       />
