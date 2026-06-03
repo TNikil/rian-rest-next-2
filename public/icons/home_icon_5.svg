@@ -69,7 +69,10 @@
      rx="0"
      ry="0" /><g
      id="g1"
-     transform="matrix(3.6064089,0,0,3.6064089,-21.437753,-24.13665)"><rect
+     transform="matrix(3.6064089,0,0,3.6064089,-21.437753,-24.13665)"
+     inkscape:export-filename="g1.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"><rect
        style="opacity:1;fill:#0242be;fill-opacity:1;stroke:#ceced0;stroke-width:0.439612;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
        id="rect36"
        width="4.5794158"

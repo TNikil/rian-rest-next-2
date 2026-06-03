@@ -13,6 +13,7 @@ import LogoSmall from '@/components/icons/LogoSmall';
 import LogoName from '@/components/icons/LogoName';
 import LogoSilver from '@/components/icons/LogoSilver';
 import LogoSmall2 from '@/components/icons/LogoSmall2';
+import LogoSync3 from '@/components/icons/LogoSyncTact3';
 
 export default function Home() {
   const WHATSAPP_NUMBER = '+94764779861';
@@ -120,9 +121,19 @@ export default function Home() {
         <p className="text-[11px] text-black/50 tracking-[0.1em] uppercase font-bold mb-6">
           +94 76 477 9861 • +974 5080 7686
         </p>
-        <p className="text-[10px] text-black/30 tracking-[0.2em] uppercase font-bold">
-          © {new Date().getFullYear()} — Built by Creovx
-        </p>
+
+        <div className="flex items-center justify-center gap-2">
+          <p className="text-[10px] text-black/30 tracking-[0.2em] uppercase font-bold">
+            © {new Date().getFullYear()} — Built by
+          </p>
+          <a
+            href="https://www.syntact3.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LogoSync3 className="w-16 h-auto" />
+          </a>
+        </div>
       </footer>
     </div>
   );
