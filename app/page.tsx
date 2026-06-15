@@ -119,7 +119,7 @@ export default function Home() {
           68/D/1/1, Kawdana RD, Dehiwala, Sri Lanka
         </address>
         <p className="text-[11px] text-black/50 tracking-[0.1em] uppercase font-bold mb-6">
-          +94 76 477 9861 • +974 5080 7686
+          +94 76 477 9861 • +974 305 2300
         </p>
 
         <div className="flex items-center justify-center gap-2">
