@@ -16,7 +16,7 @@ import LogoSmall2 from '@/components/icons/LogoSmall2';
 import LogoSync3 from '@/components/icons/LogoSyncTact3';
 
 export default function Home() {
-  const WHATSAPP_NUMBER = '+974 305 2300';
+  const WHATSAPP_NUMBER = '+974 5080 7686';
   const WA_MESSAGE =
     'Hi! I would like to book Rian Rest. Please send availability, prices, and details. Thank you!';
 
