@@ -10,7 +10,7 @@ import Location from '../components/Location';
 import { motion } from 'framer-motion';
 import Logo from '@/components/icons/Logo';
 import LogoSmall from '@/components/icons/LogoSmall';
-import LogoName className="w-auto h-10 md:h-12" />
+import LogoName from '@/components/icons/LogoName';
 import LogoSilver from '@/components/icons/LogoSilver';
 import LogoSmall2 from '@/components/icons/LogoSmall2';
 import LogoSync3 from '@/components/icons/LogoSyncTact3';
