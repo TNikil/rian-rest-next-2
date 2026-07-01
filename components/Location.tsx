@@ -4,7 +4,7 @@ const Location = () => {
   const proximityItems = [
     { name: 'KFC / BK / Pizza Hut', dist: '1 km', time: '5 MIN' },
     { name: 'Cargills / Keells', dist: '500 m', time: '2 MIN' },
-    { name: 'Mountlavinia Beach', dist: '3.2 km', time: '15 MIN' },
+    { name: 'Nearest Doctor', dist: '100 m', time: '2 min' },
     { name: 'Dehiwala Zoo', dist: '1.4 km', time: '6 MIN' },
     { name: 'Marine Drive', dist: '7 km', time: '14 MIN' },
     { name: 'Nearest Hospital', dist: '2.8 km', time: '12 MIN' },
